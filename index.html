@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXPOSED: Harvard-Backed Cholesterol Breakthrough — Independent Health Watch</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:Georgia,'Times New Roman',serif;background:#f4f4f0;color:#1a1a1a;line-height:1.7;padding-bottom:80px}
+
+        .top-banner{background:#cc0000;color:#fff;text-align:center;padding:12px 10px;font-family:Arial,sans-serif;font-size:13px;font-weight:700;letter-spacing:.5px}
+        .pulse{animation:pulse 1.5s infinite;display:inline-block}
+        @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+
+        .viewer-bar{background:#1a1a1a;color:#00ff88;text-align:center;padding:8px;font-family:'Courier New',monospace;font-size:13px}
+        .viewer-bar .dot{display:inline-block;width:8px;height:8px;background:#00ff88;border-radius:50%;margin-right:6px;animation:pulse 1.5s infinite}
+
+        .urgency-strip{background:linear-gradient(90deg,#ff0000,#cc0000,#ff0000);color:#fff;text-align:center;padding:10px;font-family:Arial,sans-serif;font-size:14px;font-weight:700;background-size:200% 100%;animation:urgency 3s infinite}
+        @keyframes urgency{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+
+        .site-header{background:#0a1628;padding:20px 0;border-bottom:3px solid #c8a84e}
+        .site-header-inner{max-width:800px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between}
+        .site-logo{color:#c8a84e;font-family:Arial,sans-serif;font-size:17px;font-weight:700;letter-spacing:1px}
+        .site-logo span{color:#fff;font-weight:400;font-size:11px;display:block;letter-spacing:.5px}
+        .site-nav{color:#888;font-family:Arial,sans-serif;font-size:11px}
+        .site-nav a{color:#888;text-decoration:none;margin-left:15px}
+
+        .content{max-width:780px;margin:0 auto;padding:30px 20px;background:#fff}
+
+        .category{font-family:Arial,sans-serif;font-size:11px;color:#cc0000;text-transform:uppercase;letter-spacing:2px;font-weight:700;margin-bottom:8px}
+
+        h1{font-size:30px;line-height:1.2;margin-bottom:15px;color:#0a1628}
+        h1 .red{color:#cc0000}
+
+        .subhead{font-size:17px;color:#444;border-left:4px solid #cc0000;padding-left:15px;margin-bottom:20px;font-style:italic}
+
+        .meta{font-family:Arial,sans-serif;font-size:12px;color:#888;margin-bottom:25px;padding-bottom:20px;border-bottom:1px solid #eee}
+        .meta .author{color:#0a1628;font-weight:700}
+        .meta .verified{background:#0066cc;color:#fff;padding:2px 8px;border-radius:3px;font-size:10px;margin-left:5px}
+
+        p{font-size:17px;margin-bottom:18px}
+        .bold{font-weight:700}
+        .red-text{color:#cc0000;font-weight:700}
+        .highlight{background:#fff3cd;padding:2px 5px}
+        .big-text{font-size:22px;text-align:center;margin:30px 0;font-weight:700}
+
+        .warning-box{background:#fff3cd;border:2px solid #cc0000;padding:20px;margin:25px 0;border-radius:5px}
+        .warning-box h3{color:#cc0000;font-size:16px;margin-bottom:8px;font-family:Arial,sans-serif}
+        .warning-box p{font-size:15px;margin-bottom:0}
+
+        .death-box{background:#1a0000;border:3px solid #ff0000;padding:25px;margin:25px 0;border-radius:5px;color:#fff}
+        .death-box h3{color:#ff4444;font-size:20px;margin-bottom:10px;font-family:Arial,sans-serif}
+        .death-box p{font-size:16px;color:#ffcccc;margin-bottom:0}
+        .death-box .stat{font-size:36px;font-weight:700;color:#ff0000;font-family:Arial,sans-serif;display:block;margin:10px 0}
+
+        .product-card{border:2px solid #ddd;border-radius:8px;padding:25px;margin:30px 0;position:relative}
+        .product-card.loser{background:#fafafa}
+        .product-card.loser .verdict{background:#cc0000;color:#fff;display:inline-block;padding:4px 12px;border-radius:3px;font-family:Arial,sans-serif;font-size:12px;font-weight:700;letter-spacing:1px;margin-bottom:10px}
+        .product-card h3{font-size:20px;margin-bottom:5px}
+        .product-card .rank{font-family:Arial,sans-serif;font-size:14px;color:#888;font-weight:700}
+        .product-card .stars{color:#ccc;font-size:22px;letter-spacing:2px;margin:5px 0}
+        .product-card .stars .filled{color:#f5a623}
+        .product-card .stamp{position:absolute;top:15px;right:15px;color:#cc0000;font-family:Arial,sans-serif;font-weight:700;font-size:14px;border:2px solid #cc0000;padding:5px 12px;transform:rotate(8deg)}
+
+        .product-card.winner{border:3px solid #c8a84e;background:linear-gradient(135deg,#fffef5,#fff9e6);box-shadow:0 8px 30px rgba(200,168,78,.3)}
+        .product-card.winner .badge{background:#c8a84e;color:#0a1628;display:inline-block;padding:6px 15px;border-radius:3px;font-family:Arial,sans-serif;font-size:13px;font-weight:700;letter-spacing:1px;margin-bottom:10px}
+        .product-card.winner .stars .filled{color:#c8a84e}
+        .winner-banner{background:#0a1628;color:#c8a84e;text-align:center;padding:12px;font-family:Arial,sans-serif;font-size:14px;font-weight:700;letter-spacing:2px;border-radius:5px;margin-bottom:20px}
+
+        .product-hero{width:100%;border-radius:8px;margin:15px 0}
+
+        .checks{list-style:none;padding:0;margin:15px 0}
+        .checks li{padding:10px 0;padding-left:30px;position:relative;font-size:16px;border-bottom:1px solid #f0ead6}
+        .checks li::before{content:"✓";position:absolute;left:0;color:#00aa44;font-weight:700;font-size:20px}
+        .checks li.neg::before{content:"✗";color:#cc0000}
+
+        .testimonial{background:#f8f8f5;border-left:4px solid #c8a84e;padding:20px;margin:20px 0;border-radius:0 5px 5px 0}
+        .testimonial p{font-style:italic;margin-bottom:8px;font-size:15px}
+        .testimonial .name{font-style:normal;font-weight:700;font-size:13px;color:#666;font-family:Arial,sans-serif}
+        .testimonial .stars-small{color:#c8a84e;font-size:14px}
+        .testimonial .verified-buyer{background:#00aa44;color:#fff;font-size:10px;padding:2px 6px;border-radius:2px;margin-left:8px;font-family:Arial,sans-serif}
+
+        .video-review{margin:20px 0;background:#f0f0eb;border-radius:8px;overflow:hidden;border:2px solid #c8a84e}
+        .video-review video{width:100%;display:block}
+        .video-review .vid-caption{padding:12px 15px;font-family:Arial,sans-serif;font-size:13px}
+        .video-review .vid-caption .stars-small{color:#c8a84e}
+        .video-review .vid-caption .verified-buyer{background:#00aa44;color:#fff;font-size:10px;padding:2px 6px;border-radius:2px;font-family:Arial,sans-serif}
+
+        .ingredient-section{background:#f8f8f5;padding:25px;border-radius:8px;margin:25px 0}
+        .ingredient-section img{width:100%;border-radius:8px;margin:10px 0}
+
+        .how-to-use{background:#0a1628;color:#fff;padding:25px;border-radius:8px;margin:25px 0;text-align:center}
+        .how-to-use img{width:100%;max-width:500px;border-radius:8px;margin:15px auto;display:block}
+        .how-to-use h3{color:#c8a84e;font-family:Arial,sans-serif;margin-bottom:10px}
+
+        .liquid-wins{text-align:center;margin:25px 0}
+        .liquid-wins img{width:100%;border-radius:8px}
+
+        .scarcity-box{background:#cc0000;color:#fff;text-align:center;padding:25px;border-radius:8px;margin:30px 0}
+        .scarcity-box h3{font-size:22px;margin-bottom:10px;font-family:Arial,sans-serif}
+        .inventory-bar{background:rgba(255,255,255,.2);border-radius:20px;height:30px;margin:15px auto;max-width:500px;overflow:hidden;position:relative}
+        .inventory-fill{background:linear-gradient(90deg,#ff4444,#ff8800);height:100%;border-radius:20px;transition:width .5s;position:relative}
+        .inventory-fill::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(90deg,transparent 0%,rgba(255,255,255,.3) 50%,transparent 100%);animation:shimmer 2s infinite}
+        @keyframes shimmer{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+        .inventory-text{font-size:24px;font-weight:700;font-family:Arial,sans-serif}
+
+        .countdown-box{background:#1a1a1a;color:#fff;text-align:center;padding:20px;border-radius:8px;margin:20px 0}
+        .countdown-box h4{font-family:Arial,sans-serif;font-size:14px;color:#ff4444;margin-bottom:10px;text-transform:uppercase;letter-spacing:2px}
+        .countdown{font-family:'Courier New',monospace;font-size:42px;font-weight:700;color:#ff4444}
+        .countdown span{background:#2a2a2a;padding:5px 10px;border-radius:5px;margin:0 2px}
+
+        /* BOGO PRICING CARDS */
+        .pricing-section{margin:30px 0}
+        .pricing-section>h2{text-align:center;font-family:Arial,sans-serif;font-size:22px;margin-bottom:25px;color:#0a1628;text-transform:uppercase;letter-spacing:2px}
+
+        .price-card{border:2px solid #ddd;border-radius:12px;margin:25px 0;overflow:hidden;background:#fff;position:relative}
+        .price-card.popular{border:3px solid #c8a84e;box-shadow:0 8px 30px rgba(200,168,78,.25)}
+        .price-card.best-value{border:3px solid #00aa44;box-shadow:0 8px 30px rgba(0,170,68,.2)}
+
+        .price-tag{text-align:center;padding:10px;font-family:Arial,sans-serif;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase}
+        .price-card.popular .price-tag{background:#c8a84e;color:#0a1628}
+        .price-card.best-value .price-tag{background:#00aa44;color:#fff}
+
+        .price-card-inner{padding:25px}
+
+        .price-tier{font-family:Arial,sans-serif;font-size:22px;font-weight:700;text-align:center;margin-bottom:3px;color:#0a1628}
+        .price-supply{font-family:Arial,sans-serif;font-size:13px;color:#888;text-align:center;margin-bottom:15px}
+
+        .price-amount{text-align:center;margin:15px 0 5px}
+        .price-per{font-family:Arial,sans-serif;font-size:52px;font-weight:700;color:#00aa44}
+        .price-per-label{display:block;font-family:Arial,sans-serif;font-size:14px;color:#666;margin-top:-5px}
+
+        .price-total{text-align:center;margin:8px 0}
+        .price-was{text-decoration:line-through;color:#999;font-family:Arial,sans-serif;font-size:16px;margin-right:8px}
+        .price-now{font-family:Arial,sans-serif;font-size:18px;font-weight:700;color:#0a1628}
+
+        .price-save{text-align:center;margin:10px 0 15px}
+        .price-save span{display:inline-block;background:#cc0000;color:#fff;padding:5px 15px;border-radius:4px;font-family:Arial,sans-serif;font-size:14px;font-weight:700}
+
+        .price-bonuses{margin:15px 0;padding:15px 20px;background:#f8f8f5;border-radius:8px}
+        .price-bonuses h4{font-family:Arial,sans-serif;font-size:12px;color:#888;margin-bottom:10px;text-transform:uppercase;letter-spacing:1px}
+        .price-bonuses .bonus-line{font-family:Arial,sans-serif;font-size:14px;padding:5px 0 5px 22px;position:relative;color:#333}
+        .price-bonuses .bonus-line::before{content:"✓";position:absolute;left:0;color:#00aa44;font-weight:700}
+        .bonus-value-total{text-align:center;font-family:Arial,sans-serif;font-size:16px;font-weight:700;color:#cc0000;margin-top:12px;padding-top:10px;border-top:1px dashed #ddd}
+
+        .price-timer{text-align:center;margin:15px 0;padding:10px;background:#1a1a1a;border-radius:6px}
+        .price-timer-label{font-family:Arial,sans-serif;font-size:11px;color:#ff4444;text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:4px}
+        .price-timer-digits{font-family:'Courier New',monospace;font-size:26px;font-weight:700;color:#ff4444}
+
+        .price-cta{display:block;width:100%;padding:18px;background:linear-gradient(180deg,#00cc44,#009933);color:#fff;text-align:center;font-family:Arial,sans-serif;font-size:18px;font-weight:700;border:none;border-radius:8px;cursor:pointer;text-decoration:none;text-transform:uppercase;letter-spacing:1px;box-shadow:0 4px 15px rgba(0,153,51,.4);transition:all .2s;position:relative;overflow:hidden;margin-top:15px}
+        .price-cta:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,153,51,.5)}
+        .price-cta::after{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:linear-gradient(transparent,rgba(255,255,255,.1),transparent);transform:rotate(45deg);animation:btnshine 3s infinite}
+        @keyframes btnshine{0%{left:-50%}100%{left:150%}}
+
+        .cta-btn{display:block;width:100%;padding:22px;background:linear-gradient(180deg,#00cc44,#009933);color:#fff;text-align:center;font-family:Arial,sans-serif;font-size:20px;font-weight:700;border:none;border-radius:8px;cursor:pointer;text-decoration:none;margin:20px 0;box-shadow:0 4px 15px rgba(0,153,51,.4);transition:all .2s;text-transform:uppercase;letter-spacing:1px;position:relative;overflow:hidden}
+        .cta-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,153,51,.5)}
+        .cta-btn::after{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:linear-gradient(transparent,rgba(255,255,255,.1),transparent);transform:rotate(45deg);animation:btnshine 3s infinite}
+        .cta-btn .sub{display:block;font-size:12px;font-weight:400;margin-top:5px;letter-spacing:0;text-transform:none}
+
+        .guarantee{text-align:center;padding:25px;border:2px solid #c8a84e;border-radius:8px;margin:25px 0;background:#fffef5}
+        .guarantee img{width:100%;max-width:400px;border-radius:8px;margin:10px auto;display:block}
+        .guarantee h3{font-family:Arial,sans-serif;color:#0a1628;margin:10px 0}
+
+        .media-bar{text-align:center;padding:20px;border-top:1px solid #eee;border-bottom:1px solid #eee;margin:25px 0}
+        .media-bar .label{font-family:Arial,sans-serif;font-size:11px;color:#999;text-transform:uppercase;letter-spacing:2px;margin-bottom:12px}
+        .media-logos{display:flex;justify-content:center;align-items:center;gap:30px;flex-wrap:wrap}
+        .media-logos .logo{font-family:Arial,sans-serif;font-weight:700;font-size:18px;color:#bbb}
+
+        .doctor-box{display:flex;gap:20px;background:#f8f8f5;padding:25px;border-radius:8px;margin:25px 0;align-items:flex-start}
+        .doctor-box .avatar{width:80px;height:80px;background:#0a1628;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#c8a84e;font-size:30px;font-family:Arial;min-width:80px}
+        .doctor-box blockquote{font-style:italic;font-size:16px}
+        .doctor-box .doc-name{font-weight:700;font-style:normal;font-size:14px;margin-top:10px;font-family:Arial,sans-serif}
+        .doctor-box .doc-title{font-style:normal;font-size:12px;color:#666;font-family:Arial,sans-serif}
+
+        .harvard-box{background:#800000;color:#fff;padding:25px;border-radius:8px;margin:25px 0;border:2px solid #a00000}
+        .harvard-box h3{font-family:Arial,sans-serif;color:#f0c040;margin-bottom:10px;font-size:18px}
+        .harvard-box p{font-size:16px;color:#ffdddd}
+        .harvard-box .stat{font-size:48px;font-weight:700;color:#fff;font-family:Arial,sans-serif;display:block;text-align:center;margin:15px 0}
+        .harvard-box .stat-label{text-align:center;font-family:Arial,sans-serif;font-size:14px;color:#f0c040;margin-bottom:15px;display:block}
+
+        .site-footer{background:#0a1628;color:#666;text-align:center;padding:30px 20px;font-family:Arial,sans-serif;font-size:11px;line-height:1.8}
+        .site-footer a{color:#888}
+
+        .sticky-bar{position:fixed;bottom:0;left:0;right:0;background:linear-gradient(90deg,#1a0000,#1a1a1a,#1a0000);padding:12px 20px;display:flex;justify-content:center;align-items:center;gap:15px;z-index:9999;box-shadow:0 -4px 20px rgba(0,0,0,.5);border-top:2px solid #cc0000}
+        .sticky-bar .timer{color:#ff4444;font-family:'Courier New',monospace;font-size:18px;font-weight:700}
+        .sticky-bar .cta-small{background:linear-gradient(180deg,#00cc44,#009933);color:#fff;padding:12px 30px;border-radius:5px;font-family:Arial,sans-serif;font-weight:700;font-size:14px;text-decoration:none;text-transform:uppercase;animation:pulse-btn 2s infinite}
+        @keyframes pulse-btn{0%,100%{box-shadow:0 0 0 0 rgba(0,204,68,.7)}50%{box-shadow:0 0 0 8px rgba(0,204,68,0)}}
+        .sticky-bar .stock{color:#ff8800;font-family:Arial,sans-serif;font-size:12px;font-weight:700}
+
+        .just-bought{position:fixed;bottom:80px;left:20px;background:#fff;border:1px solid #ddd;border-radius:8px;padding:12px 18px;box-shadow:0 4px 20px rgba(0,0,0,.15);font-family:Arial,sans-serif;font-size:13px;z-index:9998;max-width:300px;transform:translateX(-120%);transition:transform .5s ease}
+        .just-bought.show{transform:translateX(0)}
+        .just-bought .jb-name{font-weight:700}
+        .just-bought .jb-time{color:#888;font-size:11px}
+        .just-bought .jb-dot{display:inline-block;width:8px;height:8px;background:#00cc44;border-radius:50%;margin-right:6px}
+
+        @media(max-width:600px){
+            h1{font-size:22px}
+            .content{padding:20px 15px}
+            .countdown{font-size:28px}
+            .price-per{font-size:40px}
+            .price-card-inner{padding:20px 15px}
+            .doctor-box{flex-direction:column;align-items:center;text-align:center}
+            .site-header-inner{flex-direction:column;text-align:center;gap:10px}
+            .sticky-bar{flex-wrap:wrap;justify-content:center;gap:8px;padding:8px 10px}
+            .harvard-box .stat{font-size:36px}
+            .just-bought{left:10px;right:10px;max-width:none}
+        }
+    </style>
+</head>
+<body>
+
+<div class="top-banner">
+    <span class="pulse">&#9679;</span> BREAKING INVESTIGATION: HARVARD MEDICAL SCHOOL STUDY EXPOSED. BIG PHARMA DEMANDING REMOVAL. <span class="pulse">PAGE MAY BE TAKEN DOWN</span> <span class="pulse">&#9679;</span>
+</div>
+
+<div class="viewer-bar">
+    <span class="dot"></span> <span id="viewers">0</span> people reading this investigation right now <strong style="color:#ff4444">page under legal threat</strong>
+</div>
+
+<div class="urgency-strip">
+    3 PHARMACEUTICAL COMPANIES HAVE FILED CEASE &amp; DESIST ORDERS AGAINST THIS ARTICLE. READ BEFORE IT'S REMOVED.
+</div>
+
+<div class="site-header">
+    <div class="site-header-inner">
+        <div class="site-logo">
+            INDEPENDENT HEALTH WATCH
+            <span>Uncensored Medical Research &amp; Pharmaceutical Accountability | Est. 2001</span>
+        </div>
+        <div class="site-nav">
+            <a href="#">Investigations</a>
+            <a href="#">Research</a>
+            <a href="#">About</a>
+        </div>
+    </div>
+</div>
+
+<div class="content">
+
+    <div class="category">PHARMACEUTICAL EXPOS&Eacute; | JUNE 2026 | FINAL REPORT</div>
+
+    <h1>EXPOSED: Harvard Medical School Study Exposed The <span class="red">$29 Billion Cholesterol FRAUD</span> and One Natural Compound That <span class="red">DESTROYS Dangerous LDL In 14 Days</span> That 3 Pharmaceutical Companies <span class="red">PAID $140 Million To Suppress</span></h1>
+
+    <div class="subhead">"I've been a cardiologist for 32 years. I've kept silent about what I know because I was afraid of losing my license. Today I'm breaking my silence because people are DYING from a lie I helped perpetuate. I don't care about my career anymore. I care about saving lives." — Dr. Richard Hartwell, MD, FACC</div>
+
+    <div class="meta">
+        Investigation by <span class="author">Dr. Richard Hartwell, MD, FACC</span> <span class="verified">BOARD CERTIFIED CARDIOLOGIST</span><br>
+        Harvard Medical School | Johns Hopkins Residency | 32 Years | 14,000+ Cardiac Evaluations<br>
+        Published: June 2, 2026 &nbsp;|&nbsp; Updated: June 4, 2026 &nbsp;|&nbsp; <strong style="color:#cc0000"><span id="read-count">384,291</span> readers. VIRAL</strong>
+    </div>
+
+    <div class="warning-box">
+        <h3>URGENT LEGAL NOTICE</h3>
+        <p>Pfizer, AstraZeneca, and Merck have filed joint cease &amp; desist orders demanding the removal of this article. Our legal team is fighting the order but <strong>we cannot guarantee this page will exist after midnight.</strong> If you are reading this, <strong>screenshot it. Save it. Share it with everyone you love before it disappears.</strong></p>
+    </div>
+
+    <img src="https://cdn.shopify.com/s/files/1/0789/7792/5341/files/HealthyBlood_Luxury_Box_Bottle_1080.webp?v=1780556018" alt="Healthy Blood" class="product-hero">
+
+    <div class="death-box">
+        <h3>THE DEATH TOLL BIG PHARMA DOESN'T WANT YOU TO SEE</h3>
+        <span class="stat">659,041</span>
+        <p>Americans died from heart disease LAST YEAR. The majority were on statin medication. The drug that was supposed to SAVE them did NOTHING to prevent their death. A 2024 Harvard Medical School meta-analysis of 2.7 million patients exposed the truth: <strong>"Statin therapy showed NO statistically significant reduction in all-cause cardiac mortality in patients over 65."</strong></p>
+        <p style="margin-top:15px;color:#ff4444;font-weight:700">Read that again. NO REDUCTION IN DEATH. The $29 billion drug doesn't prevent death. It never did. It was NEVER DESIGNED TO. It was designed to lower a NUMBER on a blood test while your arteries continue to calcify, your heart muscle continues to weaken, and you march toward the same heart attack you were told you were protected from.</p>
+    </div>
+
+    <p>I'm about to destroy my own career. I know that. My colleagues will disown me. My hospital privileges will be revoked. The pharmaceutical reps who've bought me steak dinners for 3 decades will never call again.</p>
+
+    <p><strong>I don't care anymore.</strong></p>
+
+    <p>Because last year I watched a 58-year-old father of three die on my operating table from a <strong>massive myocardial infarction.</strong> He'd been on Lipitor for 9 years. His LDL was "controlled." His numbers looked perfect on paper. <span class="red-text">And his coronary arteries were 94% blocked.</span></p>
+
+    <p>His wife looked at me in the hallway and said: <span class="highlight">"But you told us the medication was working."</span></p>
+
+    <p>That's when something broke inside me. I went home that night, locked my office door, and spent the next <strong>6 months</strong> investigating every cholesterol intervention on the American market. What I found made me physically sick.</p>
+
+    <p class="big-text">Here are my findings. Ranked worst to best.<br><span style="color:#cc0000;font-size:16px;">4 of these are KILLING people. 1 of them could save millions.</span></p>
+
+    <!-- PRODUCT #5 -->
+    <div class="product-card loser">
+        <div class="rank">#5 OUT OF 5</div>
+        <h3>Nature's Bounty CoQ10 Complex</h3>
+        <div class="stars"><span class="filled">★</span><span>★★★★</span></div>
+        <div class="verdict">TOXIC: INDEPENDENT LAB RESULTS EXPOSED</div>
+        <p>I sent 3 bottles to Labdoor (independent supplement testing lab in San Francisco). <strong>The results should be criminal.</strong></p>
+        <p><span class="red-text">62% LESS active ingredient than the label claims.</span> That's not a rounding error. That's FRAUD. The remaining 38% was contaminated with titanium dioxide, an industrial whitening agent that the European Food Safety Authority classified as <strong>"no longer safe for human consumption"</strong> in 2021.</p>
+        <p>Every capsule is a cocktail of industrial fillers entering your bloodstream. My patients on this supplement saw LDL <strong>INCREASE by an average of 14 points</strong> over 6 months. <span class="red-text">The supplement itself was causing cardiovascular damage.</span></p>
+        <p style="font-weight:700">My verdict: This should be recalled by the FDA immediately. It is actively harming people.</p>
+    </div>
+
+    <!-- PRODUCT #4 -->
+    <div class="product-card loser">
+        <div class="rank">#4 OUT OF 5</div>
+        <h3>Lipitor / Crestor / ALL Statins</h3>
+        <div class="stars"><span class="filled">★</span><span>★★★★</span></div>
+        <div class="verdict">THE $29 BILLION DEATH MACHINE: EXPOSED</div>
+        <p><strong>This is the reason I'm going public.</strong></p>
+        <p>47 million Americans swallow a statin pill every single morning believing it will save their life. Lipitor alone has generated <strong>$141 BILLION in lifetime revenue,</strong> the single most profitable drug in the history of human civilization.</p>
+        <p><span class="red-text">And the entire premise is a SCIENTIFIC FRAUD that Harvard just exposed.</span></p>
+        <p>Statins don't fix cholesterol. They <strong>POISON</strong> your liver's HMG-CoA reductase enzyme, the same enzyme your body desperately needs to produce CoQ10, vitamin D, testosterone, estrogen, cortisol, and cellular energy. You're not lowering cholesterol. <strong>You're shutting down your body's entire hormonal system.</strong></p>
+
+        <div class="harvard-box">
+            <h3>EXPOSED: 2024 Harvard Medical School Meta-Analysis, 2.7 Million Patients</h3>
+            <p>Published in the European Heart Journal. The largest patient dataset in cardiovascular history:</p>
+            <span class="stat">ZERO</span>
+            <span class="stat-label">Statistically significant reduction in all-cause cardiac mortality in patients over 65</span>
+            <p><strong>Translation:</strong> The drug does not prevent heart attacks. It does not prevent strokes. It does not prevent death. It lowers a NUMBER. That's all it has ever done. And while it lowers that number, it simultaneously DESTROYS your muscles, ERASES your memory, POISONS your liver, and GIVES you diabetes.</p>
+        </div>
+
+        <p>Side effects exposed in the BMJ meta-analysis of 4.1 million patients:</p>
+        <ul class="checks">
+            <li class="neg"><strong>29%: Muscle destruction</strong> (rhabdomyolysis in severe cases, your muscle tissue DISSOLVES into your bloodstream and DESTROYS your kidneys)</li>
+            <li class="neg"><strong>15%: Cognitive destruction</strong> (memory loss, brain fog, confusion, Alzheimer's-like symptoms)</li>
+            <li class="neg"><strong>13%: Type 2 Diabetes</strong> (the drug GIVES you diabetes, a disease that ALSO causes heart disease)</li>
+            <li class="neg"><strong>12%: Liver damage</strong> (the organ the drug is supposed to "help" is being DESTROYED by it)</li>
+            <li class="neg"><strong>19%: Sexual dysfunction</strong> in men (erectile dysfunction, loss of libido, hormonal collapse)</li>
+            <li class="neg"><strong>8%: Peripheral neuropathy</strong> (permanent nerve damage in hands and feet)</li>
+        </ul>
+
+        <p>Your doctor won't tell you this because Big Pharma spends <strong>$5.7 BILLION per year</strong> on physician marketing. That's $29,000 per prescribing doctor per year in gifts, dinners, conferences, and "consulting fees." <span class="highlight">They are PAYING your doctor to prescribe a drug that is KILLING you. And your doctor is CASHING THE CHECK.</span></p>
+    </div>
+
+    <!-- PRODUCT #3 -->
+    <div class="product-card loser">
+        <div class="stamp">USELESS</div>
+        <div class="rank">#3 OUT OF 5</div>
+        <h3>Generic Red Yeast Rice Capsules</h3>
+        <div class="stars"><span class="filled">★★</span><span>★★★</span></div>
+        <div class="verdict">USELESS: 85% DESTROYED BY STOMACH ACID</div>
+        <p>Right compound. <strong>Catastrophically wrong delivery method.</strong></p>
+        <p>Capsule bioavailability: <strong>15%.</strong> Your stomach acid obliterates 85% of the active compound before it reaches your bloodstream. You'd need <strong>14 capsules per day</strong> to match clinical dosage. Nobody does this.</p>
+        <p>Every dollar you spend on this, <strong>85 cents goes into your toilet.</strong> You're not treating your cholesterol. You're treating your sewage system.</p>
+    </div>
+
+    <!-- PRODUCT #2 -->
+    <div class="product-card loser">
+        <div class="stamp">DANGEROUS</div>
+        <div class="rank">#2 OUT OF 5</div>
+        <h3>Generic Citrus Bergamot Capsules</h3>
+        <div class="stars"><span class="filled">★★★</span><span>★★</span></div>
+        <div class="verdict">THE MOST DANGEROUS ON THIS LIST: FALSE CONFIDENCE KILLS</div>
+        <p>This is the one that <strong>terrifies me most.</strong> Because it's ALMOST right. And "almost right" in cardiology means DEAD.</p>
+        <p>Citrus Bergamot IS the correct compound. But these generic capsules use non-standardized extraction that strips out the <strong>Bergamot Polyphenolic Fraction (BPF),</strong> the ONLY component proven in clinical trials.</p>
+        <p>What's left is an expensive citrus pill with <span class="red-text">ZERO therapeutic value</span> that gives you <strong>FALSE CONFIDENCE</strong> that you're protected. You walk around for months thinking your arteries are healing. <strong>They're not. They're calcifying. Every. Single. Day.</strong> And by the time you find out, when you're on a gurney at 2am with crushing chest pain, it's too late.</p>
+        <p style="font-weight:700;color:#cc0000">False confidence is more dangerous than no treatment at all. At least with no treatment, you stay vigilant.</p>
+    </div>
+
+    <!-- DOCTOR QUOTE -->
+    <div class="doctor-box">
+        <div class="avatar">RH</div>
+        <div>
+            <blockquote>"I've personally watched 3 patients die in the last 18 months who were taking generic bergamot capsules. They believed they were protected. Their families believed they were protected. They weren't. The capsules did nothing. Their arteries continued to close. And they died believing they were doing everything right. I will carry their faces for the rest of my life."</blockquote>
+            <div class="doc-name">Dr. Richard Hartwell, MD, FACC</div>
+            <div class="doc-title">Board Certified Cardiologist, Harvard Medical School, 32 Years</div>
+        </div>
+    </div>
+
+    <p class="big-text" style="margin:40px 0">So what ACTUALLY works?</p>
+
+    <p style="font-size:20px;text-align:center;color:#444;margin-bottom:10px">In 32 years of practicing cardiology, 14,000+ patients, I have <strong>NEVER</strong> publicly recommended a supplement.</p>
+    <p style="font-size:24px;text-align:center;color:#cc0000;font-weight:700;margin-bottom:30px">Until right now. Today. This moment.</p>
+
+    <!-- ============ WINNER ============ -->
+    <div class="product-card winner">
+        <div class="winner-banner">#1 THE ONLY SUPPLEMENT I'VE EVER RECOMMENDED IN 32 YEARS OF CARDIOLOGY</div>
+        <div class="badge">DR. HARTWELL'S SOLE RECOMMENDATION | CAREER-FIRST | HARVARD-VALIDATED</div>
+
+        <img src="https://cdn.shopify.com/s/files/1/0789/7792/5341/files/HealthyBlood_Luxury_Box_Bottle_1080.webp?v=1780556018" alt="Healthy Blood" class="product-hero">
+
+        <h3 style="font-size:28px;margin:15px 0">Healthy Blood&#8482; Liquid Bergamot Drops</h3>
+        <div class="stars" style="font-size:30px"><span class="filled">★★★★★</span></div>
+        <p style="font-family:Arial,sans-serif;font-size:13px;color:#666;margin:5px 0">4.9/5 based on 23,847 verified reviews</p>
+
+        <p style="font-size:20px;margin-top:20px"><strong>"This is not a supplement. This is the most significant cardiovascular WEAPON discovered in the last 50 years. I am staking my ENTIRE 32-year career, my medical license, and my reputation on that statement. If I'm wrong, I deserve to lose everything."</strong></p>
+
+        <div class="liquid-wins">
+            <img src="https://cdn.shopify.com/s/files/1/0789/7792/5341/files/HealthyBlood_Why_Liquid_Wins_1080.webp?v=1780556017" alt="Why Liquid Wins">
+        </div>
+
+        <p>Healthy Blood&#8482; is the <strong>ONLY supplement on planet Earth</strong> that delivers clinical-grade Bergamot Polyphenolic Fraction in <strong>liquid sublingual form,</strong> the EXACT compound, EXACT concentration, and EXACT delivery method validated by <strong>Harvard Medical School, the University of Catanzaro, and 6 independent peer-reviewed clinical trials</strong> that the pharmaceutical industry spent <strong>$140 million in legal fees trying to suppress.</strong></p>
+
+        <ul class="checks">
+            <li><strong>OBLITERATES LDL:</strong> 38% average LDL DESTRUCTION in 30 days, replicated across 6 independent clinical trials between 2014-2025</li>
+            <li><strong>REVERSES ARTERIAL DAMAGE:</strong> 41% reduction in arterial plaque progression, your arteries literally get YOUNGER with every dose</li>
+            <li><strong>SKYROCKETS PROTECTIVE HDL:</strong> 22% increase in HDL, the cholesterol your body NEEDS to repair arterial walls</li>
+            <li><strong>REPAIRS THE ROOT CAUSE:</strong> Unlike statins that POISON your liver enzyme, Healthy Blood&#8482; REPAIRS the damaged HMG-CoA reductase, FIXING the source, not masking a number</li>
+            <li><strong>95% BIOAVAILABILITY:</strong> Liquid sublingual delivery. 7 seconds under the tongue. Directly into bloodstream. Capsules deliver 15%. This delivers 95%. That's a 6.3X advantage.</li>
+            <li><strong>ELIMINATES STATIN DEPENDENCY:</strong> 91% of patients in our 18-month clinical tracking discontinued ALL statin medication within 90 days</li>
+            <li><strong>ZERO SIDE EFFECTS:</strong> No muscle destruction. No brain fog. No liver damage. No diabetes. No sexual dysfunction. No neuropathy. NOTHING. Not a single adverse event across 23,847 verified users.</li>
+            <li><strong>TRIPLE-THREAT FORMULA:</strong> Bergamot BPF + Red Yeast Rice + CoQ10. Attacks cholesterol from 3 angles simultaneously while REBUILDING the cellular energy statins destroyed</li>
+        </ul>
+
+        <div class="ingredient-section">
+            <h3 style="font-family:Arial,sans-serif;font-size:18px;margin-bottom:10px">Clinical-Grade Ingredient Profile</h3>
+            <img src="https://cdn.shopify.com/s/files/1/0789/7792/5341/files/HealthyBlood_Ingredient_Showcase_1080.webp?v=1780556018" alt="Ingredients">
+            <p style="font-size:14px;color:#666;font-family:Arial,sans-serif">Every ingredient sourced from pharmaceutical-grade suppliers. Third-party tested. Certificate of Analysis available on request.</p>
+        </div>
+
+        <div class="how-to-use">
+            <h3>THE 7-SECOND PROTOCOL</h3>
+            <p>15 drops under the tongue every morning. Hold for 7 seconds. Swallow. That's it. No pills. No prescriptions. No doctor visits. No side effects. Just 7 seconds between you and the cholesterol levels of a healthy 30-year-old.</p>
+            <img src="https://cdn.shopify.com/s/files/1/0789/7792/5341/files/HealthyBlood_How_To_Use_1080.webp?v=1780556017" alt="How To Use">
+        </div>
+
+        <h3 style="font-family:Arial,sans-serif;text-align:center;margin:30px 0 15px;font-size:20px">REAL PATIENTS. REAL BLOODWORK. REAL RESULTS.</h3>
+        <p style="text-align:center;font-size:14px;color:#666;font-family:Arial,sans-serif;margin-bottom:20px">These are unscripted, unedited video testimonials from verified Healthy Blood&#8482; customers</p>
+
+        <div class="video-review">
+            <video controls playsinline preload="metadata">
+                <source src="https://cdn.shopify.com/videos/c/o/v/5cd6617dab6b47d4891df5e91374c859.mp4" type="video/mp4">
+            </video>
+            <div class="vid-caption">
+                <div class="stars-small">★★★★★</div>
+                <strong>"My cardiologist couldn't believe the numbers"</strong> <span class="verified-buyer">VERIFIED PURCHASE</span>
+            </div>
+        </div>
+
+        <div class="video-review">
+            <video controls playsinline preload="metadata">
+                <source src="https://cdn.shopify.com/videos/c/o/v/2b8909e8a3f24b619ad2e83bab1400ab.mp4" type="video/mp4">
+            </video>
+            <div class="vid-caption">
+                <div class="stars-small">★★★★★</div>
+                <strong>"Off statins for the first time in 12 years"</strong> <span class="verified-buyer">VERIFIED PURCHASE</span>
+            </div>
+        </div>
+
+        <div class="video-review">
+            <video controls playsinline preload="metadata">
+                <source src="https://cdn.shopify.com/videos/c/o/v/9c977abfe3924a878356a952fbf0ecb4.mp4" type="video/mp4">
+            </video>
+            <div class="vid-caption">
+                <div class="stars-small">★★★★★</div>
+                <strong>"LDL dropped 97 points in 8 weeks, doctor ran the test twice"</strong> <span class="verified-buyer">VERIFIED PURCHASE</span>
+            </div>
+        </div>
+
+        <div class="video-review">
+            <video controls playsinline preload="metadata">
+                <source src="https://cdn.shopify.com/videos/c/o/v/9a9ffb9304af4c41bfad38b82dcf000b.mp4" type="video/mp4">
+            </video>
+            <div class="vid-caption">
+                <div class="stars-small">★★★★★</div>
+                <strong>"I gave this to my entire family, every single one saw results"</strong> <span class="verified-buyer">VERIFIED PURCHASE</span>
+            </div>
+        </div>
+
+        <!-- WRITTEN TESTIMONIALS -->
+        <div class="testimonial">
+            <div class="stars-small">★★★★★</div>
+            <p>"I was scheduled for triple bypass surgery. LDL 289. Triglycerides 340. My surgeon said I had WEEKS, not months. My daughter found Healthy Blood&#8482; and BEGGED me to try it before going under the knife. I had literally nothing to lose. 8 weeks later they did pre-op bloodwork. My surgeon walked in WHITE AS A GHOST. LDL 141. Triglycerides 168. He cancelled the surgery. He said in 31 years of cardiac surgery he had NEVER seen numbers reverse that fast. He asked me what I was taking. When I told him, he ordered 6 bottles for himself. <strong>A CARDIAC SURGEON IS NOW TAKING THIS INSTEAD OF STATINS.</strong> This liquid didn't just save my life. It gave me back the 20 years I thought I'd already lost."</p>
+            <div class="name">James W., Age 73, Denver CO <span class="verified-buyer">VERIFIED PURCHASE</span></div>
+        </div>
+
+        <div class="testimonial">
+            <div class="stars-small">★★★★★</div>
+            <p>"My husband's cardiologist told us he had 70% blockage in his LAD, the 'widow-maker' artery. Said it was inoperable. Gave him 'maybe 2 years before a major cardiac event.' I started SOBBING in the parking lot. That was 18 months ago. His latest angiogram came back last Tuesday. <strong>BLOCKAGE REDUCED FROM 70% TO 29%.</strong> His cardiologist was SPEECHLESS. He sat there for a full minute just staring at the screen. He said 'This doesn't happen. This CANNOT happen.' When my husband told him about Healthy Blood&#8482;, the doctor pulled out his personal credit card and ordered 6 bottles right there in the exam room. FOR HIMSELF AND HIS WIFE. A BOARD-CERTIFIED CARDIOLOGIST."</p>
+            <div class="name">Patricia M., Age 58, Scottsdale AZ <span class="verified-buyer">VERIFIED PURCHASE</span></div>
+        </div>
+
+        <div class="testimonial">
+            <div class="stars-small">★★★★★</div>
+            <p>"I'm a retired pharmacist. 31 years behind the counter. I filled over 400,000 statin prescriptions during my career. 400,000. I watched an ENTIRE GENERATION get put on pills that destroyed their bodies, and I HELPED DO IT. When I found the Harvard data on bergamot, I cried. Not because I found a solution. Because I realized how many people I had FAILED by filling those prescriptions without question. My own LDL was 214 on Crestor. I stopped statins cold. Started Healthy Blood&#8482;. <strong>8 weeks later: LDL 131.</strong> I've now given this to over 200 people personally. Every. Single. One. Same results. I will spend the rest of my life making up for the 400,000 prescriptions I should have questioned."</p>
+            <div class="name">Robert C., RPh (Ret.), Age 64, Jacksonville FL <span class="verified-buyer">VERIFIED PURCHASE</span></div>
+        </div>
+
+        <div class="testimonial">
+            <div class="stars-small">★★★★★</div>
+            <p>"I'm a nurse practitioner in cardiology. 17 years. I ordered Healthy Blood&#8482; to PROVE it was bullshit so I could warn my patients. I tested it on MYSELF first. LDL went from 192 to 128 in 6 weeks. I tested it on my husband. 211 to 137. My mother. 234 to 149. I've now put 47 of my patients on this with physician approval. <strong>FORTY-THREE OF FORTY-SEVEN showed clinically significant LDL reduction within 60 days. That's a 91.4% response rate.</strong> Nothing in pharmaceutical medicine comes close. NOTHING. I've never said that about any supplement in my career. I'm saying it now."</p>
+            <div class="name">Angela R., NP-C, Age 49, Charlotte NC <span class="verified-buyer">VERIFIED PURCHASE</span></div>
+        </div>
+
+        <div class="testimonial">
+            <div class="stars-small">★★★★★</div>
+            <p>"I lost my father to a massive heart attack at 63. He was on Lipitor. I lost my mother to a stroke at 69. She was on Crestor. I lost my brother to cardiac arrest at 57. He was on Pravastatin. THREE members of my family. All on statins. ALL DEAD. The drugs didn't save ANY of them. When my doctor told me MY cholesterol was dangerously high and recommended statins, I looked him in the eye and said 'OVER MY DEAD BODY.' I found Healthy Blood&#8482; 8 months ago. <strong>LDL went from 224 to 118. My doctor said my bloodwork looks like a healthy 30-year-old.</strong> I'm 64. My father never made it to 64. But I will. And I'll make it to 74, and 84, and 94. Because I refused to take the same drug that killed my entire family."</p>
+            <div class="name">David K., Age 64, Austin TX <span class="verified-buyer">VERIFIED PURCHASE</span></div>
+        </div>
+
+        <img src="https://cdn.shopify.com/s/files/1/0789/7792/5341/files/hf_20260528_091643_0752e344-ac1c-446f-9c9a-cd7aef88e38f.webp?v=1780556017" alt="Healthy Blood Product" class="product-hero">
+
+    </div>
+
+    <!-- MEDIA LOGOS -->
+    <div class="media-bar">
+        <div class="label">Research Cited By</div>
+        <div class="media-logos">
+            <div class="logo">HARVARD MEDICAL</div>
+            <div class="logo">CNN HEALTH</div>
+            <div class="logo">FOX NEWS</div>
+            <div class="logo">WebMD</div>
+            <div class="logo">NBC NEWS</div>
+            <div class="logo">MAYO CLINIC</div>
+        </div>
+    </div>
+
+    <!-- SCARCITY -->
+    <div class="scarcity-box">
+        <h3>WARNING: LIMITED SUPPLY</h3>
+        <p>Healthy Blood&#8482; bergamot is sourced from a single high-altitude crop in Calabria, Southern Italy. Only 2 harvests per year. Current batch is <strong>ALMOST COMPLETELY SOLD OUT.</strong> We cannot manufacture more until the next harvest. When this batch is gone, it's gone for MONTHS.</p>
+        <div class="inventory-bar">
+            <div class="inventory-fill" id="inventory-bar" style="width:78%"></div>
+        </div>
+        <div class="inventory-text"><span id="inventory-pct">78</span>% OF TODAY'S INVENTORY CLAIMED</div>
+        <p style="margin-top:10px;font-size:16px">Only <strong><span id="bottles-left">137</span> bottles</strong> remaining at this price</p>
+    </div>
+
+    <!-- COUNTDOWN -->
+    <div class="countdown-box">
+        <h4>THIS SPECIAL PRICING EXPIRES IN:</h4>
+        <div class="countdown" id="countdown">
+            <span id="cd-hours">00</span>:<span id="cd-minutes">00</span>:<span id="cd-seconds">00</span>
+        </div>
+        <p style="color:#888;font-size:13px;margin-top:10px;font-family:Arial,sans-serif">After this timer hits zero, pricing reverts to $89/bottle. No exceptions. No extensions.</p>
+    </div>
+
+    <!-- ============ BOGO PRICING ============ -->
+    <div class="pricing-section">
+        <h2>Select Your Package</h2>
+
+        <!-- 1 BOTTLE -->
+        <div class="price-card">
+            <div class="price-card-inner">
+                <div class="price-tier">1 Bottle</div>
+                <div class="price-supply">30-Day Supply</div>
+                <div class="price-amount">
+                    <span class="price-per">$59</span>
+                    <span class="price-per-label">per bottle</span>
+                </div>
+                <div class="price-total">
+                    <span class="price-was">$89</span>
+                    <span class="price-now">$59</span>
+                </div>
+                <div class="price-save"><span>SAVE 34%</span></div>
+                <div class="price-bonuses">
+                    <h4>Included with your order:</h4>
+                    <div class="bonus-line">Free Shipping</div>
+                    <div class="bonus-line">90-Day Money-Back Guarantee</div>
+                </div>
+                <div class="price-timer">
+                    <span class="price-timer-label">Offer expires in:</span>
+                    <span class="price-timer-digits sync-timer">00:00:00</span>
+                </div>
+                <a href="#" class="price-cta">ORDER NOW</a>
+            </div>
+        </div>
+
+        <!-- 3 BOTTLES - MOST POPULAR -->
+        <div class="price-card popular">
+            <div class="price-tag">MOST POPULAR</div>
+            <div class="price-card-inner">
+                <div class="price-tier">Buy 2 Get 1 FREE</div>
+                <div class="price-supply">3 Bottles | 90-Day Supply</div>
+                <div class="price-amount">
+                    <span class="price-per">$49</span>
+                    <span class="price-per-label">per bottle</span>
+                </div>
+                <div class="price-total">
+                    <span class="price-was">$267</span>
+                    <span class="price-now">$147</span>
+                </div>
+                <div class="price-save"><span>SAVE 45%</span></div>
+                <div class="price-bonuses">
+                    <h4>Everything above, PLUS:</h4>
+                    <div class="bonus-line">Free Shipping</div>
+                    <div class="bonus-line">90-Day Money-Back Guarantee</div>
+                    <div class="bonus-line">"The Statin Exit Protocol" ($97 value) FREE</div>
+                    <div class="bonus-line">"The 7-Second Morning Ritual" ($79 value) FREE</div>
+                    <div class="bonus-value-total">+$176 in FREE Bonuses</div>
+                </div>
+                <div class="price-timer">
+                    <span class="price-timer-label">Offer expires in:</span>
+                    <span class="price-timer-digits sync-timer">00:00:00</span>
+                </div>
+                <a href="#" class="price-cta">ORDER NOW - MOST POPULAR</a>
+            </div>
+        </div>
+
+        <!-- 6 BOTTLES - BEST VALUE -->
+        <div class="price-card best-value">
+            <div class="price-tag best">BEST VALUE</div>
+            <div class="price-card-inner">
+                <div class="price-tier">Buy 3 Get 3 FREE</div>
+                <div class="price-supply">6 Bottles | 180-Day Supply</div>
+                <div class="price-amount">
+                    <span class="price-per">$39</span>
+                    <span class="price-per-label">per bottle</span>
+                </div>
+                <div class="price-total">
+                    <span class="price-was">$534</span>
+                    <span class="price-now">$234</span>
+                </div>
+                <div class="price-save"><span>SAVE 56%</span></div>
+                <div class="price-bonuses">
+                    <h4>Everything above, PLUS:</h4>
+                    <div class="bonus-line">Free Shipping</div>
+                    <div class="bonus-line">90-Day Money-Back Guarantee</div>
+                    <div class="bonus-line">"The Statin Exit Protocol" ($97 value) FREE</div>
+                    <div class="bonus-line">"The 7-Second Morning Ritual" ($79 value) FREE</div>
+                    <div class="bonus-line">"47 Foods That DESTROY Cholesterol" ($49 value) FREE</div>
+                    <div class="bonus-line">"The Arterial Repair Blueprint" ($49 value) FREE</div>
+                    <div class="bonus-line">Priority VIP Health Concierge, LIFETIME ($360/yr value) FREE</div>
+                    <div class="bonus-value-total">+$297 in FREE Bonuses</div>
+                </div>
+                <div class="price-timer">
+                    <span class="price-timer-label">Offer expires in:</span>
+                    <span class="price-timer-digits sync-timer">00:00:00</span>
+                </div>
+                <a href="#" class="price-cta">ORDER NOW - BEST VALUE</a>
+            </div>
+        </div>
+    </div>
+
+    <a href="#" class="cta-btn">
+        YES. RUSH MY ORDER BEFORE STOCK RUNS OUT
+        <span class="sub">Free shipping on 6-bottle orders | 90-day ironclad guarantee | 256-bit encrypted checkout</span>
+    </a>
+
+    <!-- GUARANTEE -->
+    <div class="guarantee">
+        <img src="https://cdn.shopify.com/s/files/1/0789/7792/5341/files/HealthyBlood_Satisfaction_Guarantee_1080.webp?v=1780556018" alt="Satisfaction Guarantee">
+        <h3>IRONCLAD 90-DAY "IT WORKS OR IT'S FREE" GUARANTEE</h3>
+        <p style="font-size:15px">Try Healthy Blood&#8482; for a full 90 days. Get your bloodwork done at day 60. If your LDL hasn't dropped significantly, or if you're unhappy for ANY reason, ANY reason at all, contact us and we'll refund <strong>every single cent.</strong> No questions. No forms. No hassle. No fine print. <strong>You don't even have to send the bottles back. Keep them.</strong> We take 100% of the risk because we are 100% confident in the science.</p>
+    </div>
+
+    <!-- SECOND CTA -->
+    <a href="#" class="cta-btn">
+        CLAIM MY BOTTLES + FREE BONUSES BEFORE THEY'RE GONE
+        <span class="sub">Only <span id="bottles-left-2">137</span> bottles left | This page may be removed at any time | Secure checkout</span>
+    </a>
+
+    <!-- BOTTOM IMAGE -->
+    <img src="https://cdn.shopify.com/s/files/1/0789/7792/5341/files/hf_20260528_091101_7f0daf89-03f9-443e-a1cf-93e7ef069598.webp?v=1780556018" alt="Healthy Blood" class="product-hero">
+
+    <p style="text-align:center;font-size:20px;font-weight:700;margin:20px 0;color:#0a1628">"Every day you wait is another day your arteries calcify.<br>Another day closer to the heart attack statins won't prevent.<br>You found this page for a reason. Don't waste it."</p>
+    <p style="text-align:center;font-size:14px;color:#666;font-style:italic">Dr. Richard Hartwell, MD, FACC</p>
+
+    <!-- FINAL CTA -->
+    <a href="#" class="cta-btn" style="font-size:24px;padding:28px">
+        YES. SAVE MY LIFE. RUSH MY ORDER NOW.
+        <span class="sub">Join 23,847 people who chose science over Big Pharma</span>
+    </a>
+
+    <p style="font-size:11px;color:#999;margin-top:30px;font-family:Arial,sans-serif;line-height:1.6">This article is published by Independent Health Watch as a public health service. Dr. Hartwell is an independent medical advisor. Individual results may vary. Healthy Blood&#8482; is a dietary supplement. These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease. Consult your physician before making changes to your medication.</p>
+
+</div>
+
+<div class="site-footer">
+    &copy; 2026 Independent Health Watch. All Rights Reserved.<br>
+    <a href="#">Privacy Policy</a> &nbsp;|&nbsp; <a href="#">Terms of Service</a> &nbsp;|&nbsp; <a href="#">Contact</a> &nbsp;|&nbsp; <a href="#">Editorial Standards</a><br>
+    Independent publication. Not affiliated with any pharmaceutical company, government agency, or medical institution.
+</div>
+
+<!-- STICKY BAR -->
+<div class="sticky-bar">
+    <div class="stock">SELLING FAST: <span id="bottles-left-3">137</span> left</div>
+    <div class="timer sync-timer" id="sticky-timer">00:00:00</div>
+    <a href="#" class="cta-small">RUSH MY ORDER &#8594;</a>
+</div>
+
+<!-- JUST BOUGHT POPUP -->
+<div class="just-bought" id="just-bought">
+    <span class="jb-dot"></span>
+    <span class="jb-name" id="jb-name">Sarah M. from Austin, TX</span><br>
+    <span class="jb-time">just purchased <strong>3 bottles</strong> of Healthy Blood&#8482;</span>
+</div>
+
+<script>
+(function(){
+    var now=Date.now();
+
+    // ===== VIEWERS (counts up then stops, persists) =====
+    var VK='hb_v4',VTK='hb_vt4';
+    var sv=localStorage.getItem(VK),st=localStorage.getItem(VTK);
+    var fc,cc;
+    if(sv&&st&&(now-parseInt(st))<3600000){
+        fc=parseInt(sv);document.getElementById('viewers').textContent=fc.toLocaleString()
+    }else{
+        fc=Math.floor(Math.random()*600)+1247;cc=0;
+        localStorage.setItem(VK,fc);localStorage.setItem(VTK,now);
+        var vi=setInterval(function(){
+            cc+=Math.floor(Math.random()*30)+10;
+            if(cc>=fc){cc=fc;clearInterval(vi)}
+            document.getElementById('viewers').textContent=cc.toLocaleString()
+        },40)
+    }
+
+    // ===== COUNTDOWN (single timer, displayed everywhere via .sync-timer) =====
+    var CK='hb_cd4',ce=localStorage.getItem(CK);
+    if(!ce||parseInt(ce)<now){var m=Math.floor(Math.random()*22)+18;ce=now+(m*60000);localStorage.setItem(CK,ce)}
+    else ce=parseInt(ce);
+    function uc(){
+        var r=parseInt(ce)-Date.now();
+        if(r<=0){ce=Date.now()+(Math.floor(Math.random()*22)+18)*60000;localStorage.setItem(CK,ce);r=parseInt(ce)-Date.now()}
+        var h=Math.floor(r/3600000),mn=Math.floor((r%3600000)/60000),s=Math.floor((r%60000)/1000);
+        var ts=String(h).padStart(2,'0')+':'+String(mn).padStart(2,'0')+':'+String(s).padStart(2,'0');
+        // Update main countdown
+        var ch=document.getElementById('cd-hours'),cm=document.getElementById('cd-minutes'),cs=document.getElementById('cd-seconds');
+        if(ch){ch.textContent=String(h).padStart(2,'0')}
+        if(cm){cm.textContent=String(mn).padStart(2,'0')}
+        if(cs){cs.textContent=String(s).padStart(2,'0')}
+        // Update all sync timers (pricing cards + sticky bar)
+        var els=document.querySelectorAll('.sync-timer');
+        for(var i=0;i<els.length;i++){els[i].textContent=ts}
+    }
+    uc();setInterval(uc,1000);
+
+    // ===== INVENTORY (starts at 78%, climbs to 88%, bottles tick down, persists) =====
+    var IPK='hb_ip4',IBK='hb_ib4',ITK='hb_it4';
+    var savedPct=localStorage.getItem(IPK),savedBtl=localStorage.getItem(IBK),savedTime=localStorage.getItem(ITK);
+    var pct,btl;
+    if(savedPct&&savedBtl&&savedTime){
+        var elapsed=(now-parseInt(savedTime))/1000;
+        pct=parseFloat(savedPct)+(elapsed/60);
+        btl=parseInt(savedBtl)-Math.floor(elapsed/25);
+        if(pct>88)pct=88;
+        if(btl<19)btl=19;
+    }else{
+        pct=78;btl=137;
+    }
+    localStorage.setItem(IPK,pct);localStorage.setItem(IBK,btl);localStorage.setItem(ITK,now);
+
+    function ui(){
+        var rp=Math.round(pct);
+        document.getElementById('bottles-left').textContent=btl;
+        document.getElementById('bottles-left-2').textContent=btl;
+        document.getElementById('bottles-left-3').textContent=btl;
+        document.getElementById('inventory-pct').textContent=rp;
+        document.getElementById('inventory-bar').style.width=rp+'%'
+    }
+    ui();
+
+    // Bottles tick down every 20-30 seconds
+    setInterval(function(){
+        if(Math.random()>.3){
+            btl--;if(btl<19)btl=19;
+            localStorage.setItem(IBK,btl);localStorage.setItem(ITK,Date.now());ui()
+        }
+    },25000);
+
+    // Percentage climbs up slowly (roughly 1% per minute, capped at 88%)
+    setInterval(function(){
+        if(pct<88){
+            pct+=0.15+Math.random()*0.2;
+            if(pct>88)pct=88;
+            localStorage.setItem(IPK,pct);localStorage.setItem(ITK,Date.now());ui()
+        }
+    },12000);
+
+    // ===== READ COUNT =====
+    var RK='hb_r4',rd=localStorage.getItem(RK);
+    rd=rd?parseInt(rd)+Math.floor(Math.random()*300)+100:384291;
+    localStorage.setItem(RK,rd);document.getElementById('read-count').textContent=rd.toLocaleString();
+
+    // ===== JUST BOUGHT POPUP =====
+    var names=[
+        'Sarah M. from Austin, TX','Mike D. from Phoenix, AZ','Linda K. from Tampa, FL',
+        'James R. from Denver, CO','Patricia W. from Scottsdale, AZ','Robert H. from Nashville, TN',
+        'Karen S. from Charlotte, NC','David L. from Portland, OR','Susan B. from San Diego, CA',
+        'William T. from Atlanta, GA','Jennifer C. from Dallas, TX','Richard P. from Seattle, WA',
+        'Barbara N. from Miami, FL','Thomas G. from Chicago, IL','Nancy F. from Boston, MA',
+        'Charles A. from Houston, TX','Margaret E. from Raleigh, NC','Joseph V. from Las Vegas, NV'
+    ];
+    var qtys=['1 bottle','3 bottles','3 bottles','6 bottles','3 bottles','6 bottles'];
+    var jb=document.getElementById('just-bought'),jbn=document.getElementById('jb-name');
+
+    function showPopup(){
+        jbn.textContent=names[Math.floor(Math.random()*names.length)];
+        jb.querySelector('.jb-time').innerHTML='just purchased <strong>'+qtys[Math.floor(Math.random()*qtys.length)]+'</strong> of Healthy Blood\u2122';
+        jb.classList.add('show');
+        setTimeout(function(){jb.classList.remove('show')},5000);
+    }
+    setTimeout(showPopup,8000);
+    setInterval(function(){setTimeout(showPopup,Math.random()*5000)},25000);
+})();
+</script>
+
+</body>
+</html>
