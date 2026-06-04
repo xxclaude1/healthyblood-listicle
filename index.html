@@ -442,44 +442,10 @@
         <p style="margin-top: 10px; font-size: 14px;">Only <strong><span id="bottles-left">150</span> bottles</strong> remaining at this price</p>
     </div>
 
-    <!-- COUNTDOWN -->
-    <div class="countdown-box">
-        <h4>THIS SPECIAL PRICING EXPIRES IN:</h4>
-        <div class="countdown" id="countdown">
-            <span id="cd-hours">00</span>:<span id="cd-minutes">00</span>:<span id="cd-seconds">00</span>
-        </div>
-        <p style="color: #888; font-size: 13px; margin-top: 10px; font-family: Arial, sans-serif;">After this timer hits zero, pricing reverts to $89/bottle</p>
-    </div>
-
-    <!-- PRICING -->
-    <div class="pricing">
-        <a href="#" class="price-option" style="text-decoration: none; color: inherit;">
-            <div class="qty">1 Bottle<br><span style="font-size: 12px; color: #888; font-weight: normal;">30-Day Supply</span></div>
-            <div class="original">$89</div>
-            <div class="price">$59</div>
-            <div class="per">per bottle</div>
-            <div class="save">SAVE $30</div>
-        </a>
-        <a href="#" class="price-option featured" style="text-decoration: none; color: inherit;">
-            <div class="qty">3 Bottles<br><span style="font-size: 12px; color: #888; font-weight: normal;">90-Day Supply</span></div>
-            <div class="original">$267</div>
-            <div class="price">$147</div>
-            <div class="per">$49/bottle</div>
-            <div class="save">SAVE $120</div>
-        </a>
-        <a href="#" class="price-option best" style="text-decoration: none; color: inherit;">
-            <div class="qty">6 Bottles<br><span style="font-size: 12px; color: #888; font-weight: normal;">180-Day Supply</span></div>
-            <div class="original">$534</div>
-            <div class="price">$234</div>
-            <div class="per">$39/bottle</div>
-            <div class="save">SAVE $300</div>
-        </a>
-    </div>
-
     <!-- CTA -->
-    <a href="#" class="cta-btn">
+    <a href="https://www.tryhealthyblood.com/" class="cta-btn">
         YES, RUSH MY ORDER NOW
-        <span class="sub">Free shipping on 6-bottle orders | 90-day money-back guarantee | Secure checkout</span>
+        <span class="sub">90-day money-back guarantee | Secure checkout</span>
     </a>
 
     <!-- BONUS BOX -->
@@ -511,9 +477,9 @@
     </div>
 
     <!-- SECOND CTA -->
-    <a href="#" class="cta-btn">
+    <a href="https://www.tryhealthyblood.com/" class="cta-btn">
         CLAIM MY BOTTLES + FREE BONUSES BEFORE THEY'RE GONE
-        <span class="sub">Only <span id="bottles-left-2">150</span> bottles left at this price | Secure 256-bit encrypted checkout</span>
+        <span class="sub">Secure 256-bit encrypted checkout | 90-day money-back guarantee</span>
     </a>
 
     <!-- BOTTOM DISCLAIMER -->
@@ -532,7 +498,7 @@
 <div class="sticky-bar">
     <div class="stock">Only <span id="bottles-left-3">150</span> left</div>
     <div class="timer" id="sticky-timer">00:00:00</div>
-    <a href="#" class="cta-small">RUSH MY ORDER</a>
+    <a href="https://www.tryhealthyblood.com/" class="cta-small">RUSH MY ORDER</a>
 </div>
 
 <script>
@@ -690,6 +656,188 @@
     }
     localStorage.setItem(READ_KEY, reads);
     document.getElementById('read-count').textContent = reads.toLocaleString();
+})();
+</script>
+
+<!-- ANALYTICS TRACKING -->
+<script>
+(function() {
+  var DASHBOARD = 'https://healthyblood-dashboard.netlify.app';
+  var TRACK = DASHBOARD + '/.netlify/functions/track';
+  var HEARTBEAT_URL = DASHBOARD + '/.netlify/functions/heartbeat';
+  var SITE = 'healthyblood';
+
+  // Session ID — persist across page loads
+  var SID_KEY = 'hb_session_id';
+  var sid = localStorage.getItem(SID_KEY);
+  if (!sid) {
+    sid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+      var r = Math.random() * 16 | 0;
+      return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+    });
+    localStorage.setItem(SID_KEY, sid);
+  }
+
+  function post(url, data) {
+    data.session_id = sid;
+    data.site = SITE;
+    try {
+      if (navigator.sendBeacon) {
+        navigator.sendBeacon(url, JSON.stringify(data));
+      } else {
+        var x = new XMLHttpRequest();
+        x.open('POST', url, true);
+        x.setRequestHeader('Content-Type', 'application/json');
+        x.send(JSON.stringify(data));
+      }
+    } catch(e) {}
+  }
+
+  // 1. Page view
+  post(TRACK, { type: 'page_view', referrer: document.referrer || '' });
+
+  // 2. Section tracking via IntersectionObserver
+  // Map sections by querySelectorAll index for loser cards
+  var losers = document.querySelectorAll('.product-card.loser');
+  var sectionMap = [
+    { el: document.querySelector('.content > .category'), id: 'headline' },
+    { el: losers[0] || null, id: 'product5' },
+    { el: losers[1] || null, id: 'product4' },
+    { el: losers[2] || null, id: 'product3' },
+    { el: losers[3] || null, id: 'product2' },
+    { el: document.querySelector('.doctor-box'), id: 'doctor_quote' },
+    { el: document.querySelector('.product-card.winner'), id: 'winner' },
+    { el: document.querySelector('.product-gallery'), id: 'gallery' },
+    { el: document.querySelector('.testimonial'), id: 'testimonials' },
+    { el: document.querySelector('.video-reviews-section'), id: 'videos' },
+    { el: document.querySelector('.media-bar'), id: 'media_bar' },
+    { el: document.querySelector('.scarcity-box'), id: 'scarcity' },
+    { el: document.querySelector('.pricing'), id: 'pricing' },
+    { el: document.querySelector('.cta-btn'), id: 'cta_area' }
+  ];
+
+  var viewedSections = {};
+  var currentSection = null;
+
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        var secId = entry.target.getAttribute('data-track-section');
+        if (!secId) return;
+        if (entry.isIntersecting) {
+          if (!viewedSections[secId]) {
+            viewedSections[secId] = true;
+            post(TRACK, { type: 'section_view', section: secId });
+          }
+          if (currentSection && currentSection !== secId) {
+            post(TRACK, { type: 'section_exit', section: currentSection });
+          }
+          currentSection = secId;
+        }
+      });
+    }, { threshold: 0.3 });
+
+    sectionMap.forEach(function(s) {
+      if (s.el) {
+        s.el.setAttribute('data-track-section', s.id);
+        observer.observe(s.el);
+      }
+    });
+  }
+
+  // 3. Scroll depth tracking (throttled, fires at 10% increments)
+  var lastScrollPct = 0;
+  var scrollThrottle = null;
+  window.addEventListener('scroll', function() {
+    if (scrollThrottle) return;
+    scrollThrottle = setTimeout(function() {
+      scrollThrottle = null;
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      if (docHeight <= 0) return;
+      var pct = Math.round((scrollTop / docHeight) * 100);
+      var bucket = Math.floor(pct / 10) * 10;
+      if (bucket > lastScrollPct) {
+        lastScrollPct = bucket;
+        post(TRACK, { type: 'scroll_depth', scroll_pct: bucket });
+      }
+    }, 500);
+  });
+
+  // 4. CTA button clicks
+  var ctaBtns = document.querySelectorAll('.cta-btn');
+  for (var i = 0; i < ctaBtns.length; i++) {
+    (function(idx) {
+      ctaBtns[idx].addEventListener('click', function() {
+        var ctaId = idx === 0 ? 'top_cta' : 'bottom_cta';
+        post(TRACK, { type: 'cta_click', cta_id: ctaId });
+      });
+    })(i);
+  }
+  var stickyBtn = document.querySelector('.sticky-bar .cta-small');
+  if (stickyBtn) {
+    stickyBtn.addEventListener('click', function() {
+      post(TRACK, { type: 'cta_click', cta_id: 'sticky_cta' });
+    });
+  }
+
+  // 5. Pricing option clicks
+  var priceOptions = document.querySelectorAll('.price-option');
+  var pricingTiers = ['1bottle', '3bottle', '6bottle'];
+  for (var p = 0; p < priceOptions.length; p++) {
+    (function(idx) {
+      priceOptions[idx].addEventListener('click', function() {
+        post(TRACK, { type: 'pricing_click', pricing_tier: pricingTiers[idx] || 'unknown' });
+      });
+    })(p);
+  }
+
+  // 6. Video play/end tracking
+  var videos = document.querySelectorAll('.video-card video');
+  for (var v = 0; v < videos.length; v++) {
+    (function(idx) {
+      var vid = videos[idx];
+      var videoId = 'video_' + (idx + 1);
+      vid.addEventListener('play', function() {
+        post(TRACK, { type: 'video_play', video_id: videoId });
+      });
+      vid.addEventListener('ended', function() {
+        post(TRACK, { type: 'video_end', video_id: videoId, video_seconds: Math.round(vid.duration || 0) });
+      });
+      vid.addEventListener('pause', function() {
+        if (!vid.ended) {
+          post(TRACK, { type: 'video_progress', video_id: videoId, video_seconds: Math.round(vid.currentTime || 0) });
+        }
+      });
+    })(v);
+  }
+
+  // 7. Gallery click tracking — intercept setGallery
+  var origSetGallery = window.setGallery;
+  var thumbEls = document.querySelectorAll('.product-thumbs .thumb');
+  window.setGallery = function(thumbEl, src) {
+    var imgIdx = -1;
+    for (var t = 0; t < thumbEls.length; t++) {
+      if (thumbEls[t] === thumbEl) { imgIdx = t; break; }
+    }
+    if (imgIdx >= 0) {
+      post(TRACK, { type: 'gallery_click', gallery_image: imgIdx });
+    }
+    if (origSetGallery) origSetGallery(thumbEl, src);
+  };
+
+  // 8. Exit tracking
+  window.addEventListener('beforeunload', function() {
+    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var pct = docHeight > 0 ? Math.round((scrollTop / docHeight) * 100) : 0;
+    post(TRACK, { type: 'exit', scroll_pct: pct, section: currentSection });
+  });
+
+  // 9. Heartbeat every 10 seconds
+  setInterval(function() {
+    post(HEARTBEAT_URL, {});
+  }, 10000);
 })();
 </script>
 
