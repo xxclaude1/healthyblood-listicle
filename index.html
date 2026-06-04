@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EXPOSED: 5 Cholesterol Supplements Exposed By Rogue Cardiologist — American Cardiovascular Research Institute</title>
+    <title>EXPOSED: 5 Cholesterol Supplements Exposed By Rogue Cardiologist</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: Georgia, 'Times New Roman', serif; background: #f4f4f0; color: #1a1a1a; line-height: 1.7; }
@@ -73,8 +73,27 @@
         /* CHECK MARKS */
         .checks { list-style: none; padding: 0; margin: 15px 0; }
         .checks li { padding: 8px 0; padding-left: 30px; position: relative; font-size: 16px; }
-        .checks li::before { content: "✓"; position: absolute; left: 0; color: #00aa44; font-weight: bold; font-size: 20px; }
-        .checks li.fire::before { content: "🔥"; }
+        .checks li::before { content: "\2713"; position: absolute; left: 0; color: #00aa44; font-weight: bold; font-size: 20px; }
+
+        /* PRODUCT GALLERY */
+        .product-gallery { margin: 25px 0; }
+        .product-gallery-main { width: 100%; max-width: 420px; margin: 0 auto 12px; border-radius: 8px; overflow: hidden; background: #fff; border: 2px solid #c8a84e; box-shadow: 0 0 0 1px #c8a84e, 0 4px 15px rgba(200,168,78,0.2); }
+        .product-gallery-main img { width: 100%; display: block; }
+        .product-thumbs { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+        .product-thumbs .thumb { width: 72px; height: 72px; border-radius: 6px; overflow: hidden; cursor: pointer; border: 2px solid #eee; transition: border-color 0.2s; flex-shrink: 0; }
+        .product-thumbs .thumb:hover { border-color: #c8a84e; }
+        .product-thumbs .thumb.active { border-color: #c8a84e; box-shadow: 0 0 0 1px #c8a84e; }
+        .product-thumbs .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+        /* VIDEO REVIEWS */
+        .video-reviews-section { margin: 30px 0; }
+        .video-reviews-section h3 { font-family: Arial, sans-serif; font-size: 16px; text-align: center; color: #0a1628; margin-bottom: 15px; letter-spacing: 1px; text-transform: uppercase; }
+        .video-reviews { display: flex; gap: 12px; overflow-x: auto; -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory; padding: 5px 0; scrollbar-width: none; }
+        .video-reviews::-webkit-scrollbar { display: none; }
+        .video-card { min-width: 220px; max-width: 220px; scroll-snap-align: start; flex-shrink: 0; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); background: #f8f8f5; }
+        .video-card video { width: 100%; height: 300px; object-fit: cover; display: block; background: #000; }
+        .video-card .vid-label { padding: 8px 12px; font-family: Arial, sans-serif; font-size: 12px; color: #666; text-align: center; }
+        .video-card .vid-label .vid-stars { color: #c8a84e; font-size: 13px; display: block; margin-bottom: 2px; }
 
         /* TESTIMONIALS */
         .testimonial { background: #f8f8f5; border-left: 4px solid #c8a84e; padding: 20px; margin: 20px 0; border-radius: 0 5px 5px 0; }
@@ -103,9 +122,9 @@
         .price-option { display: flex; align-items: center; padding: 15px 20px; border: 2px solid #ddd; border-radius: 8px; margin: 10px 0; cursor: pointer; transition: all 0.2s; }
         .price-option:hover { border-color: #c8a84e; }
         .price-option.featured { border-color: #c8a84e; background: #fffef5; position: relative; }
-        .price-option.featured::after { content: "MOST POPULAR — 73% CHOOSE THIS"; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #c8a84e; color: #0a1628; font-size: 10px; padding: 3px 12px; border-radius: 3px; font-family: Arial, sans-serif; font-weight: bold; white-space: nowrap; }
+        .price-option.featured::after { content: "MOST POPULAR"; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #c8a84e; color: #0a1628; font-size: 10px; padding: 3px 12px; border-radius: 3px; font-family: Arial, sans-serif; font-weight: bold; white-space: nowrap; }
         .price-option.best { border-color: #00aa44; background: #f0fff0; position: relative; }
-        .price-option.best::after { content: "BEST VALUE — BIGGEST SAVINGS"; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #00aa44; color: white; font-size: 10px; padding: 3px 12px; border-radius: 3px; font-family: Arial, sans-serif; font-weight: bold; white-space: nowrap; }
+        .price-option.best::after { content: "BEST VALUE"; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #00aa44; color: white; font-size: 10px; padding: 3px 12px; border-radius: 3px; font-family: Arial, sans-serif; font-weight: bold; white-space: nowrap; }
         .price-option .qty { font-family: Arial, sans-serif; font-weight: bold; font-size: 18px; min-width: 120px; }
         .price-option .original { text-decoration: line-through; color: #999; font-family: Arial, sans-serif; margin-right: 10px; }
         .price-option .price { font-family: Arial, sans-serif; font-weight: bold; font-size: 22px; color: #00aa44; }
@@ -115,20 +134,19 @@
         /* CTA BUTTON */
         .cta-btn { display: block; width: 100%; padding: 22px; background: linear-gradient(180deg, #00cc44 0%, #009933 100%); color: white; text-align: center; font-family: Arial, sans-serif; font-size: 20px; font-weight: bold; border: none; border-radius: 8px; cursor: pointer; text-decoration: none; margin: 20px 0; box-shadow: 0 4px 15px rgba(0,153,51,0.4); transition: all 0.2s; text-transform: uppercase; letter-spacing: 1px; }
         .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,153,51,0.5); }
-        .cta-btn .lock { font-size: 16px; margin-right: 8px; }
         .cta-btn .sub { display: block; font-size: 12px; font-weight: normal; margin-top: 5px; letter-spacing: 0; text-transform: none; }
 
         /* BONUS BOX */
         .bonus-box { background: #f0f7ff; border: 2px dashed #0066cc; padding: 25px; border-radius: 8px; margin: 25px 0; }
         .bonus-box h3 { font-family: Arial, sans-serif; color: #0066cc; font-size: 16px; margin-bottom: 15px; }
         .bonus-item { display: flex; align-items: flex-start; margin-bottom: 12px; font-size: 15px; }
-        .bonus-item .icon { font-size: 20px; margin-right: 10px; min-width: 25px; }
+        .bonus-item .icon { font-size: 14px; margin-right: 10px; min-width: 25px; font-family: Arial, sans-serif; font-weight: bold; color: #0066cc; }
         .bonus-item .val { color: #cc0000; text-decoration: line-through; font-family: Arial, sans-serif; font-size: 13px; }
         .bonus-item .free { color: #00aa44; font-weight: bold; font-family: Arial, sans-serif; font-size: 13px; margin-left: 5px; }
 
         /* GUARANTEE */
         .guarantee { text-align: center; padding: 25px; border: 2px solid #c8a84e; border-radius: 8px; margin: 25px 0; background: #fffef5; }
-        .guarantee .shield { font-size: 50px; }
+        .guarantee .shield { font-size: 36px; font-family: Arial, sans-serif; font-weight: bold; color: #c8a84e; }
         .guarantee h3 { font-family: Arial, sans-serif; color: #0a1628; margin: 10px 0; }
         .guarantee p { font-size: 14px; color: #666; }
 
@@ -140,7 +158,7 @@
 
         /* DOCTOR QUOTE */
         .doctor-box { display: flex; gap: 20px; background: #f8f8f5; padding: 25px; border-radius: 8px; margin: 25px 0; align-items: flex-start; }
-        .doctor-box .avatar { width: 80px; height: 80px; background: #0a1628; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #c8a84e; font-size: 30px; font-family: Arial; min-width: 80px; }
+        .doctor-box .avatar { width: 80px; height: 80px; border-radius: 50%; min-width: 80px; object-fit: cover; }
         .doctor-box blockquote { font-style: italic; font-size: 16px; }
         .doctor-box .doc-name { font-weight: bold; font-style: normal; font-size: 14px; margin-top: 10px; font-family: Arial, sans-serif; }
         .doctor-box .doc-title { font-style: normal; font-size: 12px; color: #666; font-family: Arial, sans-serif; }
@@ -164,6 +182,8 @@
             .doctor-box { flex-direction: column; align-items: center; text-align: center; }
             .site-header-inner { flex-direction: column; text-align: center; gap: 10px; }
             .sticky-bar { flex-wrap: wrap; justify-content: center; gap: 8px; padding: 8px 10px; }
+            .video-card { min-width: 180px; max-width: 180px; }
+            .video-card video { height: 240px; }
         }
 
         body { padding-bottom: 70px; }
@@ -173,7 +193,7 @@
 
 <!-- TOP BANNER -->
 <div class="top-banner">
-    <span class="pulse">⚠️</span> BREAKING: FDA-SUPPRESSED STUDY EXPOSED — THIS PAGE MAY BE REMOVED AT ANY TIME <span class="pulse">⚠️</span>
+    <span class="pulse">BREAKING</span> &mdash; FDA-SUPPRESSED STUDY EXPOSED. THIS PAGE MAY BE REMOVED AT ANY TIME.
 </div>
 
 <!-- LIVE VIEWER BAR -->
@@ -186,7 +206,7 @@
     <div class="site-header-inner">
         <div class="site-logo">
             AMERICAN CARDIOVASCULAR RESEARCH INSTITUTE
-            <span>Independent Medical Research & Public Health Reporting — Est. 2003</span>
+            <span>Independent Medical Research & Public Health Reporting | Est. 2003</span>
         </div>
         <div class="site-nav">
             <a href="#">Research</a>
@@ -199,20 +219,20 @@
 <!-- CONTENT -->
 <div class="content">
 
-    <div class="category">🔴 EXCLUSIVE INVESTIGATION — June 2026</div>
+    <div class="category">EXCLUSIVE INVESTIGATION | JUNE 2026</div>
 
-    <h1>EXPOSED: The 5 Cholesterol "Solutions" A Rogue Cardiologist Says Are <span class="red">DESTROYING Your Heart From The Inside Out</span> — And The One Underground Compound <span class="red">Big Pharma Tried To Bury In 1987</span></h1>
+    <h1>EXPOSED: The 5 Cholesterol "Solutions" A Rogue Cardiologist Says Are <span class="red">DESTROYING Your Heart From The Inside Out</span> And The One Underground Compound <span class="red">Big Pharma Tried To Bury In 1987</span></h1>
 
-    <div class="subhead">"In 32 years of practicing cardiology, I've never gone public like this. But after watching 47 million Americans get poisoned by a $29 billion lie, I can't stay silent anymore." — Dr. Richard Hartwell, MD, FACC</div>
+    <div class="subhead">"In 32 years of practicing cardiology, I've never gone public like this. But after watching 47 million Americans get poisoned by a $29 billion lie, I can't stay silent anymore."</div>
 
     <div class="meta">
-        By <span class="author">Dr. Richard Hartwell, MD, FACC</span> <span class="verified">✓ VERIFIED PHYSICIAN</span><br>
-        Board Certified Cardiologist — Johns Hopkins Residency — 32 Years Clinical Practice<br>
+        By <span class="author">Dr. Richard Hartwell, MD, FACC</span> <span class="verified">VERIFIED PHYSICIAN</span><br>
+        Board Certified Cardiologist | Johns Hopkins Residency | 32 Years Clinical Practice<br>
         Published: June 2, 2026 &nbsp;|&nbsp; Updated: June 4, 2026 &nbsp;|&nbsp; <span id="read-count">247,891</span> readers
     </div>
 
     <div class="warning-box">
-        <h3>⚠️ LEGAL NOTICE</h3>
+        <h3>LEGAL NOTICE</h3>
         <p>This article has been removed from 3 websites and 2 medical forums under pressure from pharmaceutical lobbyists. We are publishing it here as a matter of public health. <strong>We cannot guarantee how long this page will remain accessible.</strong> If you are reading this, save or screenshot it now.</p>
     </div>
 
@@ -222,7 +242,7 @@
 
     <p><span class="red-text">I'm not afraid anymore.</span></p>
 
-    <p>What I'm about to show you is the result of a <strong>6-month internal investigation</strong> into the 5 most commonly used cholesterol interventions in America — including the one that 47 million Americans take every single day.</p>
+    <p>What I'm about to show you is the result of a <strong>6-month internal investigation</strong> into the 5 most commonly used cholesterol interventions in America, including the one that 47 million Americans take every single day.</p>
 
     <p>4 of them are <span class="highlight">actively making your cholesterol WORSE.</span> One of them is causing irreversible organ damage. And the entire $29 billion industry is built on a scientific fraud that was exposed in a European clinical trial <strong>Big Pharma spent millions trying to suppress.</strong></p>
 
@@ -233,12 +253,12 @@
         <div class="stamp">FAIL</div>
         <div class="rank">#5 OUT OF 5</div>
         <h3>Nature's Bounty CoQ10 Complex</h3>
-        <div class="stars"><span class="filled">★</span><span>★★★★</span></div>
-        <div class="verdict">DANGEROUS — DO NOT TAKE</div>
+        <div class="stars"><span class="filled">&#9733;</span><span>&#9733;&#9733;&#9733;&#9733;</span></div>
+        <div class="verdict">DANGEROUS | DO NOT TAKE</div>
         <p>I sent 3 bottles of this to an independent lab in Austin, TX. The results were <strong>devastating.</strong></p>
-        <p><span class="red-text">62% less active ingredient than the label claims.</span> The remaining 38% was bulked with magnesium stearate, silicon dioxide, and titanium dioxide — industrial fillers that have been linked to gut inflammation and impaired nutrient absorption.</p>
+        <p><span class="red-text">62% less active ingredient than the label claims.</span> The remaining 38% was bulked with magnesium stearate, silicon dioxide, and titanium dioxide. Industrial fillers that have been linked to gut inflammation and impaired nutrient absorption.</p>
         <p>This supplement isn't just useless. It's <strong>actively interfering with your body's ability to process cholesterol.</strong> Every capsule you swallow makes the problem worse.</p>
-        <p>My patients who were taking this saw their LDL increase by an average of 11% over 6 months. When I pulled them off it — LDL dropped within 30 days. <strong>The supplement was the problem.</strong></p>
+        <p>My patients who were taking this saw their LDL increase by an average of 11% over 6 months. When I pulled them off it, LDL dropped within 30 days. <strong>The supplement was the problem.</strong></p>
     </div>
 
     <!-- PRODUCT #4 -->
@@ -246,11 +266,11 @@
         <div class="stamp">EXPOSED</div>
         <div class="rank">#4 OUT OF 5</div>
         <h3>Lipitor / Atorvastatin (All Statins)</h3>
-        <div class="stars"><span class="filled">★</span><span>★★★★</span></div>
-        <div class="verdict">EXPOSED — THE $29 BILLION LIE</div>
+        <div class="stars"><span class="filled">&#9733;</span><span>&#9733;&#9733;&#9733;&#9733;</span></div>
+        <div class="verdict">EXPOSED | THE $29 BILLION LIE</div>
         <p>This is the one that made me go public.</p>
-        <p><strong>47 million Americans</strong> take a statin every day. Lipitor alone generated <strong>$141 billion in lifetime sales</strong> — the most profitable drug in human history. And the entire premise it's built on is a <span class="red-text">scientific fraud.</span></p>
-        <p>Statins don't fix cholesterol. They <strong>BLOCK</strong> your liver's HMG-CoA reductase enzyme — the same enzyme your body needs to produce CoQ10, hormones, and cellular energy. That's like disconnecting your car's check engine light and calling it "fixed."</p>
+        <p><strong>47 million Americans</strong> take a statin every day. Lipitor alone generated <strong>$141 billion in lifetime sales</strong>, the most profitable drug in human history. And the entire premise it's built on is a <span class="red-text">scientific fraud.</span></p>
+        <p>Statins don't fix cholesterol. They <strong>BLOCK</strong> your liver's HMG-CoA reductase enzyme, the same enzyme your body needs to produce CoQ10, hormones, and cellular energy. That's like disconnecting your car's check engine light and calling it "fixed."</p>
         <p>The side effects exposed in a 2019 BMJ meta-analysis of 4.1 million patients:</p>
         <ul style="margin: 15px 0 15px 30px; font-size: 16px;">
             <li><strong>29% experienced muscle destruction</strong> (rhabdomyolysis in severe cases)</li>
@@ -267,10 +287,10 @@
         <div class="stamp">USELESS</div>
         <div class="rank">#3 OUT OF 5</div>
         <h3>Generic Red Yeast Rice (Capsules)</h3>
-        <div class="stars"><span class="filled">★★</span><span>★★★</span></div>
-        <div class="verdict">USELESS — WRONG DELIVERY METHOD</div>
+        <div class="stars"><span class="filled">&#9733;&#9733;</span><span>&#9733;&#9733;&#9733;</span></div>
+        <div class="verdict">USELESS | WRONG DELIVERY METHOD</div>
         <p>Right idea. <strong>Catastrophically wrong execution.</strong></p>
-        <p>Red Yeast Rice contains monacolin K — a naturally occurring statin compound. The problem? In capsule form, your stomach acid destroys <strong>85% of it before it reaches your bloodstream.</strong></p>
+        <p>Red Yeast Rice contains monacolin K, a naturally occurring statin compound. The problem? In capsule form, your stomach acid destroys <strong>85% of it before it reaches your bloodstream.</strong></p>
         <p>You're paying $40/month for 15% bioavailability. That means for every dollar you spend, <strong>85 cents goes directly into your toilet.</strong></p>
         <p>You would need to take <strong>14 capsules per day</strong> to match the therapeutic dose used in the only clinical trial that showed actual results. Nobody does this. Nobody can.</p>
     </div>
@@ -280,20 +300,20 @@
         <div class="stamp">CLOSE</div>
         <div class="rank">#2 OUT OF 5</div>
         <h3>Generic Citrus Bergamot (Capsules)</h3>
-        <div class="stars"><span class="filled">★★★</span><span>★★</span></div>
-        <div class="verdict">CLOSE — BUT FATALLY FLAWED</div>
+        <div class="stars"><span class="filled">&#9733;&#9733;&#9733;</span><span>&#9733;&#9733;</span></div>
+        <div class="verdict">CLOSE | BUT FATALLY FLAWED</div>
         <p>This is the one that almost got it right. And that's what makes it <strong>the most dangerous supplement on this list.</strong></p>
-        <p>Citrus Bergamot IS the right compound — I'll explain why in a moment. But these generic capsule versions use a <strong>non-standardized extraction process</strong> that strips out the Bergamot Polyphenolic Fraction (BPF) — which is the ONLY active component that was shown to work in clinical trials.</p>
+        <p>Citrus Bergamot IS the right compound. I'll explain why in a moment. But these generic capsule versions use a <strong>non-standardized extraction process</strong> that strips out the Bergamot Polyphenolic Fraction (BPF), which is the ONLY active component shown to work in clinical trials.</p>
         <p>What you're left with is an expensive citrus pill with <strong>zero therapeutic value.</strong> It FEELS like you're doing something. You're not. Your LDL doesn't move. Your arteries continue to calcify. And you waste 6-12 months thinking you're protected when <span class="red-text">you're actually getting worse every single day.</span></p>
     </div>
 
     <!-- DOCTOR QUOTE -->
     <div class="doctor-box">
-        <div class="avatar">RH</div>
+        <img class="avatar" src="https://cdn.shopify.com/s/files/1/0789/7792/5341/files/Screenshot_2026-06-04_at_5.43.57_PM.png?v=1780559046" alt="Dr. Richard Hartwell">
         <div>
             <blockquote>"I've watched patients waste years on supplements that did nothing while their arterial plaque doubled. The generic bergamot capsules are the worst offenders because they give people FALSE CONFIDENCE that they're protected. They're not. And by the time they find out, the damage is often irreversible."</blockquote>
             <div class="doc-name">Dr. Richard Hartwell, MD, FACC</div>
-            <div class="doc-title">Board Certified Cardiologist — 32 Years Clinical Practice</div>
+            <div class="doc-title">Board Certified Cardiologist | 32 Years Clinical Practice</div>
         </div>
     </div>
 
@@ -303,58 +323,98 @@
 
     <!-- WINNER CARD -->
     <div class="product-card winner">
-        <div class="winner-banner">🏆 #1 — EDITOR'S CHOICE — BREAKTHROUGH OF THE DECADE 🏆</div>
+        <div class="winner-banner">#1 | EDITOR'S CHOICE | BREAKTHROUGH OF THE DECADE</div>
         <div class="rank">#1 OUT OF 5</div>
-        <h3 style="font-size: 26px;">Healthy Blood™ — Liquid Bergamot Drops</h3>
-        <div class="stars" style="font-size: 28px;"><span class="filled">★★★★★</span></div>
-        <div class="badge">DR. HARTWELL'S #1 RECOMMENDATION — FIRST IN 32 YEARS</div>
+        <h3 style="font-size: 26px;">Healthy Blood&#8482; Liquid Bergamot Drops</h3>
+        <div class="stars" style="font-size: 28px;"><span class="filled">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+        <div class="badge">DR. HARTWELL'S #1 RECOMMENDATION | FIRST IN 32 YEARS</div>
 
         <p style="font-size: 18px; margin-top: 15px;"><strong>"This is the single most important cardiovascular discovery since the invention of the stethoscope. I stake my entire 32-year career on that statement."</strong></p>
 
-        <p>Healthy Blood™ is the <strong>only supplement in existence</strong> that delivers clinical-grade Bergamot Polyphenolic Fraction (BPF) in liquid sublingual form — the exact compound and exact delivery method used in the <strong>suppressed University of Catanzaro clinical trials</strong> that Big Pharma spent millions trying to bury.</p>
+        <p>Healthy Blood&#8482; is the <strong>only supplement in existence</strong> that delivers clinical-grade Bergamot Polyphenolic Fraction (BPF) in liquid sublingual form, the exact compound and exact delivery method used in the <strong>suppressed University of Catanzaro clinical trials</strong> that Big Pharma spent millions trying to bury.</p>
 
-        <p><strong>Why liquid?</strong> Because capsules have 15% bioavailability. Liquid drops under the tongue absorb directly into the bloodstream — <span class="red-text">95% bioavailability.</span> You need a fraction of the dose and it works in days, not months.</p>
+        <p><strong>Why liquid?</strong> Because capsules have 15% bioavailability. Liquid drops under the tongue absorb directly into the bloodstream: <span class="red-text">95% bioavailability.</span> You need a fraction of the dose and it works in days, not months.</p>
 
         <ul class="checks">
-            <li class="fire"><strong>OBLITERATES LDL:</strong> 38% average LDL reduction in 30 days (University of Catanzaro, replicated across 4 independent clinical trials, 2014-2022)</li>
-            <li class="fire"><strong>REVERSES PLAQUE:</strong> 41% drop in arterial plaque progression markers — your arteries are literally getting YOUNGER</li>
-            <li><strong>SKYROCKETS HDL:</strong> 22% increase in protective HDL cholesterol — the cholesterol your body actually NEEDS</li>
-            <li><strong>REPAIRS THE SOURCE:</strong> Unlike statins that BLOCK your liver enzyme, Healthy Blood™ REPAIRS the damaged HMG-CoA reductase enzyme — fixing the root cause, not masking it</li>
-            <li><strong>95% BIOAVAILABILITY:</strong> Liquid sublingual absorption — 7 seconds under the tongue, directly into bloodstream</li>
+            <li><strong>OBLITERATES LDL:</strong> 38% average LDL reduction in 30 days (University of Catanzaro, replicated across 4 independent clinical trials, 2014-2022)</li>
+            <li><strong>REVERSES PLAQUE:</strong> 41% drop in arterial plaque progression markers. Your arteries are literally getting YOUNGER</li>
+            <li><strong>SKYROCKETS HDL:</strong> 22% increase in protective HDL cholesterol, the cholesterol your body actually NEEDS</li>
+            <li><strong>REPAIRS THE SOURCE:</strong> Unlike statins that BLOCK your liver enzyme, Healthy Blood&#8482; REPAIRS the damaged HMG-CoA reductase enzyme, fixing the root cause, not masking it</li>
+            <li><strong>95% BIOAVAILABILITY:</strong> Liquid sublingual absorption. 7 seconds under the tongue, directly into bloodstream</li>
             <li><strong>ZERO SIDE EFFECTS:</strong> No muscle destruction. No brain fog. No liver damage. No diabetes risk. No sexual dysfunction. NONE.</li>
             <li><strong>ELIMINATES STATINS:</strong> 89% of patients in our clinical tracking were able to discontinue statin medication within 90 days under physician supervision</li>
-            <li><strong>TRIPLE-ACTION FORMULA:</strong> Citrus Bergamot BPF + Red Yeast Rice + CoQ10 — attacks cholesterol from 3 angles simultaneously</li>
+            <li><strong>TRIPLE-ACTION FORMULA:</strong> Citrus Bergamot BPF + Red Yeast Rice + CoQ10. Attacks cholesterol from 3 angles simultaneously</li>
         </ul>
+
+        <!-- PRODUCT GALLERY -->
+        <div class="product-gallery">
+            <div class="product-gallery-main">
+                <img id="galleryMain" src="https://cdn.shopify.com/s/files/1/0789/7792/5341/files/HealthyBlood_Luxury_Box_Bottle_1080.webp?v=1780556018" alt="Healthy Blood">
+            </div>
+            <div class="product-thumbs">
+                <div class="thumb active" onclick="setGallery(this, 'https://cdn.shopify.com/s/files/1/0789/7792/5341/files/HealthyBlood_Luxury_Box_Bottle_1080.webp?v=1780556018')"><img src="https://cdn.shopify.com/s/files/1/0789/7792/5341/files/HealthyBlood_Luxury_Box_Bottle_1080.webp?v=1780556018" alt="Box"></div>
+                <div class="thumb" onclick="setGallery(this, 'https://cdn.shopify.com/s/files/1/0789/7792/5341/files/hf_20260528_091643_0752e344-ac1c-446f-9c9a-cd7aef88e38f.webp?v=1780556017')"><img src="https://cdn.shopify.com/s/files/1/0789/7792/5341/files/hf_20260528_091643_0752e344-ac1c-446f-9c9a-cd7aef88e38f.webp?v=1780556017" alt="Product"></div>
+                <div class="thumb" onclick="setGallery(this, 'https://cdn.shopify.com/s/files/1/0789/7792/5341/files/HealthyBlood_Why_Choose_Infographic_1080.webp?v=1780556018')"><img src="https://cdn.shopify.com/s/files/1/0789/7792/5341/files/HealthyBlood_Why_Choose_Infographic_1080.webp?v=1780556018" alt="Why Choose"></div>
+                <div class="thumb" onclick="setGallery(this, 'https://cdn.shopify.com/s/files/1/0789/7792/5341/files/HealthyBlood_How_To_Use_1080.webp?v=1780556017')"><img src="https://cdn.shopify.com/s/files/1/0789/7792/5341/files/HealthyBlood_How_To_Use_1080.webp?v=1780556017" alt="How To Use"></div>
+                <div class="thumb" onclick="setGallery(this, 'https://cdn.shopify.com/s/files/1/0789/7792/5341/files/HealthyBlood_Why_Liquid_Wins_1080.webp?v=1780556017')"><img src="https://cdn.shopify.com/s/files/1/0789/7792/5341/files/HealthyBlood_Why_Liquid_Wins_1080.webp?v=1780556017" alt="Why Liquid"></div>
+                <div class="thumb" onclick="setGallery(this, 'https://cdn.shopify.com/s/files/1/0789/7792/5341/files/HealthyBlood_Ingredient_Showcase_1080.webp?v=1780556018')"><img src="https://cdn.shopify.com/s/files/1/0789/7792/5341/files/HealthyBlood_Ingredient_Showcase_1080.webp?v=1780556018" alt="Ingredients"></div>
+                <div class="thumb" onclick="setGallery(this, 'https://cdn.shopify.com/s/files/1/0789/7792/5341/files/HealthyBlood_Satisfaction_Guarantee_1080.webp?v=1780556018')"><img src="https://cdn.shopify.com/s/files/1/0789/7792/5341/files/HealthyBlood_Satisfaction_Guarantee_1080.webp?v=1780556018" alt="Guarantee"></div>
+                <div class="thumb" onclick="setGallery(this, 'https://cdn.shopify.com/s/files/1/0789/7792/5341/files/hf_20260528_091101_7f0daf89-03f9-443e-a1cf-93e7ef069598.webp?v=1780556018')"><img src="https://cdn.shopify.com/s/files/1/0789/7792/5341/files/hf_20260528_091101_7f0daf89-03f9-443e-a1cf-93e7ef069598.webp?v=1780556018" alt="Product"></div>
+            </div>
+        </div>
 
         <!-- TESTIMONIALS -->
         <div class="testimonial">
-            <div class="stars-small">★★★★★</div>
-            <p>"My LDL was 289. My triglycerides were off the charts. I was scheduled for triple bypass surgery. My daughter found Healthy Blood™ online and literally BEGGED me to try it. I had nothing to lose. 8 weeks later my surgeon called me in for pre-op bloodwork. He walked into the room white as a ghost. My LDL was 141. Triglycerides normal. He cancelled the surgery. He said in 29 years he had never seen numbers reverse that fast. <strong>This liquid saved my life. I am not exaggerating. I would be dead without it.</strong>"</p>
-            <div class="name">James W., Age 73, Denver CO <span class="verified-buyer">✓ VERIFIED PURCHASE</span></div>
+            <div class="stars-small">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p>"My LDL was 289. My triglycerides were off the charts. I was scheduled for triple bypass surgery. My daughter found Healthy Blood&#8482; online and literally BEGGED me to try it. I had nothing to lose. 8 weeks later my surgeon called me in for pre-op bloodwork. He walked into the room white as a ghost. My LDL was 141. Triglycerides normal. He cancelled the surgery. He said in 29 years he had never seen numbers reverse that fast. <strong>This liquid saved my life. I am not exaggerating. I would be dead without it.</strong>"</p>
+            <div class="name">James W., Age 73, Denver CO <span class="verified-buyer">VERIFIED PURCHASE</span></div>
         </div>
 
         <div class="testimonial">
-            <div class="stars-small">★★★★★</div>
+            <div class="stars-small">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
             <p>"My husband's cardiologist told him he had a 70% blockage in his left anterior descending artery. He said it was inoperable and gave him 'maybe 2 years before a major cardiac event.' That was 18 months ago. His latest angiogram showed the blockage had reduced to 31%. His doctor was SPEECHLESS. He asked what my husband was taking. When he told him, the doctor ordered 6 bottles for himself and his wife. <strong>A CARDIOLOGIST is now taking this.</strong>"</p>
-            <div class="name">Patricia M., Age 58, Scottsdale AZ <span class="verified-buyer">✓ VERIFIED PURCHASE</span></div>
+            <div class="name">Patricia M., Age 58, Scottsdale AZ <span class="verified-buyer">VERIFIED PURCHASE</span></div>
         </div>
 
         <div class="testimonial">
-            <div class="stars-small">★★★★★</div>
-            <p>"LDL was 247. Double-stacked on Atorvastatin AND Ezetimibe. I couldn't walk up stairs. Couldn't play with my grandkids. My muscles felt like they were dissolving. My brother Rob (retired pharmacist) gave me Healthy Blood™ and told me to take it for 60 days. Day 60 bloodwork: <strong>LDL 144. DOWN 103 POINTS.</strong> My cardiologist ran the test TWICE because he didn't believe it. I'm off ALL cholesterol medication for the first time in 11 years. I just ran a 5K with my granddaughter."</p>
-            <div class="name">Frank C., Age 61, Tampa FL <span class="verified-buyer">✓ VERIFIED PURCHASE</span></div>
+            <div class="stars-small">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p>"LDL was 247. Double-stacked on Atorvastatin AND Ezetimibe. I couldn't walk up stairs. Couldn't play with my grandkids. My muscles felt like they were dissolving. My brother Rob (retired pharmacist) gave me Healthy Blood&#8482; and told me to take it for 60 days. Day 60 bloodwork: <strong>LDL 144. DOWN 103 POINTS.</strong> My cardiologist ran the test TWICE because he didn't believe it. I'm off ALL cholesterol medication for the first time in 11 years. I just ran a 5K with my granddaughter."</p>
+            <div class="name">Frank C., Age 61, Tampa FL <span class="verified-buyer">VERIFIED PURCHASE</span></div>
         </div>
 
         <div class="testimonial">
-            <div class="stars-small">★★★★★</div>
-            <p>"I'm a nurse practitioner. I've worked in cardiology for 17 years. I was EXTREMELY skeptical. I ordered Healthy Blood™ to prove it was BS so I could warn my patients. I tested it on myself first. LDL went from 192 to 128 in 6 weeks. I tested it on my husband. 211 to 137. I am now recommending this to every single one of my patients over 45. <strong>I've never seen anything work this fast with zero side effects. NOTHING in pharmaceutical medicine comes close.</strong>"</p>
-            <div class="name">Angela R., NP-C, Age 49, Charlotte NC <span class="verified-buyer">✓ VERIFIED PURCHASE</span></div>
+            <div class="stars-small">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p>"I'm a nurse practitioner. I've worked in cardiology for 17 years. I was EXTREMELY skeptical. I ordered Healthy Blood&#8482; to prove it was BS so I could warn my patients. I tested it on myself first. LDL went from 192 to 128 in 6 weeks. I tested it on my husband. 211 to 137. I am now recommending this to every single one of my patients over 45. <strong>I've never seen anything work this fast with zero side effects. NOTHING in pharmaceutical medicine comes close.</strong>"</p>
+            <div class="name">Angela R., NP-C, Age 49, Charlotte NC <span class="verified-buyer">VERIFIED PURCHASE</span></div>
         </div>
 
         <div class="testimonial">
-            <div class="stars-small">★★★★★</div>
-            <p>"I lost my father to a heart attack at 63. My mother to a stroke at 69. Both were on statins. Both trusted their doctors. I refused to be next. I found Healthy Blood™ 8 months ago. My LDL went from 224 to 118. My doctor said my bloodwork looks like a 30-year-old. <strong>I'm 64. I've never felt better in my life. I buy the 6-bottle pack and give them to everyone I love.</strong>"</p>
-            <div class="name">David K., Age 64, Austin TX <span class="verified-buyer">✓ VERIFIED PURCHASE</span></div>
+            <div class="stars-small">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p>"I lost my father to a heart attack at 63. My mother to a stroke at 69. Both were on statins. Both trusted their doctors. I refused to be next. I found Healthy Blood&#8482; 8 months ago. My LDL went from 224 to 118. My doctor said my bloodwork looks like a 30-year-old. <strong>I'm 64. I've never felt better in my life. I buy the 6-bottle pack and give them to everyone I love.</strong>"</p>
+            <div class="name">David K., Age 64, Austin TX <span class="verified-buyer">VERIFIED PURCHASE</span></div>
+        </div>
+
+        <!-- VIDEO REVIEWS -->
+        <div class="video-reviews-section">
+            <h3>Real Customer Video Reviews</h3>
+            <div class="video-reviews">
+                <div class="video-card">
+                    <video src="https://cdn.shopify.com/videos/c/o/v/5cd6617dab6b47d4891df5e91374c859.mp4" controls playsinline preload="metadata"></video>
+                    <div class="vid-label"><span class="vid-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>Verified Customer</div>
+                </div>
+                <div class="video-card">
+                    <video src="https://cdn.shopify.com/videos/c/o/v/2b8909e8a3f24b619ad2e83bab1400ab.mp4" controls playsinline preload="metadata"></video>
+                    <div class="vid-label"><span class="vid-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>Verified Customer</div>
+                </div>
+                <div class="video-card">
+                    <video src="https://cdn.shopify.com/videos/c/o/v/9c977abfe3924a878356a952fbf0ecb4.mp4" controls playsinline preload="metadata"></video>
+                    <div class="vid-label"><span class="vid-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>Verified Customer</div>
+                </div>
+                <div class="video-card">
+                    <video src="https://cdn.shopify.com/videos/c/o/v/9a9ffb9304af4c41bfad38b82dcf000b.mp4" controls playsinline preload="metadata"></video>
+                    <div class="vid-label"><span class="vid-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>Verified Customer</div>
+                </div>
+            </div>
         </div>
 
     </div>
@@ -373,18 +433,18 @@
 
     <!-- SCARCITY BOX -->
     <div class="scarcity-box">
-        <h3>⚠️ WARNING: LIMITED SUPPLY ⚠️</h3>
-        <p>Healthy Blood™ bergamot is sourced from a single high-altitude crop in Calabria, Italy. Only 2 harvests per year. Current batch is almost sold out.</p>
+        <h3>WARNING: LIMITED SUPPLY</h3>
+        <p>Healthy Blood&#8482; bergamot is sourced from a single high-altitude crop in Calabria, Italy. Only 2 harvests per year. Current batch is almost sold out.</p>
         <div class="inventory-bar">
-            <div class="inventory-fill" id="inventory-bar" style="width: 91%;"></div>
+            <div class="inventory-fill" id="inventory-bar" style="width: 72%;"></div>
         </div>
-        <div class="inventory-text"><span id="inventory-pct">91</span>% OF TODAY'S INVENTORY CLAIMED</div>
-        <p style="margin-top: 10px; font-size: 14px;">Only <strong><span id="bottles-left">137</span> bottles</strong> remaining at this price</p>
+        <div class="inventory-text"><span id="inventory-pct">72</span>% OF TODAY'S INVENTORY CLAIMED</div>
+        <p style="margin-top: 10px; font-size: 14px;">Only <strong><span id="bottles-left">150</span> bottles</strong> remaining at this price</p>
     </div>
 
     <!-- COUNTDOWN -->
     <div class="countdown-box">
-        <h4>🔴 THIS SPECIAL PRICING EXPIRES IN:</h4>
+        <h4>THIS SPECIAL PRICING EXPIRES IN:</h4>
         <div class="countdown" id="countdown">
             <span id="cd-hours">00</span>:<span id="cd-minutes">00</span>:<span id="cd-seconds">00</span>
         </div>
@@ -418,46 +478,46 @@
 
     <!-- CTA -->
     <a href="#" class="cta-btn">
-        <span class="lock">🔒</span> YES — RUSH MY ORDER NOW
-        <span class="sub">Free shipping on 6-bottle orders • 90-day money-back guarantee • Secure checkout</span>
+        YES, RUSH MY ORDER NOW
+        <span class="sub">Free shipping on 6-bottle orders | 90-day money-back guarantee | Secure checkout</span>
     </a>
 
     <!-- BONUS BOX -->
     <div class="bonus-box">
-        <h3>🎁 ORDER TODAY AND GET $197 IN FREE BONUSES:</h3>
+        <h3>ORDER TODAY AND GET $197 IN FREE BONUSES:</h3>
         <div class="bonus-item">
-            <div class="icon">📕</div>
-            <div><strong>"The Statin Exit Protocol"</strong> — How to safely discontinue statin medication in 14 days under physician supervision. Step-by-step guide used by 23,000+ patients. <span class="val">$79 value</span> <span class="free">FREE</span></div>
+            <div class="icon">1.</div>
+            <div><strong>"The Statin Exit Protocol"</strong> How to safely discontinue statin medication in 14 days under physician supervision. Step-by-step guide used by 23,000+ patients. <span class="val">$79 value</span> <span class="free">FREE</span></div>
         </div>
         <div class="bonus-item">
-            <div class="icon">📗</div>
-            <div><strong>"The 7-Second Morning Ritual"</strong> — The exact daily protocol from the Catanzaro clinical trials. Maximizes bergamot absorption by 340%. <span class="val">$49 value</span> <span class="free">FREE</span></div>
+            <div class="icon">2.</div>
+            <div><strong>"The 7-Second Morning Ritual"</strong> The exact daily protocol from the Catanzaro clinical trials. Maximizes bergamot absorption by 340%. <span class="val">$49 value</span> <span class="free">FREE</span></div>
         </div>
         <div class="bonus-item">
-            <div class="icon">📘</div>
-            <div><strong>"47 Foods That DESTROY Cholesterol"</strong> — The complete food guide that accelerates LDL reduction 3x faster when combined with Healthy Blood™. <span class="val">$39 value</span> <span class="free">FREE</span></div>
+            <div class="icon">3.</div>
+            <div><strong>"47 Foods That DESTROY Cholesterol"</strong> The complete food guide that accelerates LDL reduction 3x faster when combined with Healthy Blood&#8482;. <span class="val">$39 value</span> <span class="free">FREE</span></div>
         </div>
         <div class="bonus-item">
-            <div class="icon">🎧</div>
-            <div><strong>Priority VIP Hotline Access</strong> — Direct phone line to our cardiovascular health team. Skip the queue. Get answers in minutes, not days. <span class="val">$30/mo value</span> <span class="free">FREE FOR LIFE</span></div>
+            <div class="icon">4.</div>
+            <div><strong>Priority VIP Hotline Access</strong> Direct phone line to our cardiovascular health team. Skip the queue. Get answers in minutes, not days. <span class="val">$30/mo value</span> <span class="free">FREE FOR LIFE</span></div>
         </div>
     </div>
 
     <!-- GUARANTEE -->
     <div class="guarantee">
-        <div class="shield">🛡️</div>
+        <div class="shield">GUARANTEE</div>
         <h3>IRONCLAD 90-DAY MONEY-BACK GUARANTEE</h3>
-        <p>Try Healthy Blood™ for a full 90 days. Get your bloodwork done. If your LDL doesn't drop significantly — or if you're unhappy for ANY reason — contact us and we'll refund every single cent. No questions. No hassle. No fine print. <strong>You don't even have to send the bottles back.</strong> We take ALL the risk so you don't have to.</p>
+        <p>Try Healthy Blood&#8482; for a full 90 days. Get your bloodwork done. If your LDL doesn't drop significantly, or if you're unhappy for ANY reason, contact us and we'll refund every single cent. No questions. No hassle. No fine print. <strong>You don't even have to send the bottles back.</strong> We take ALL the risk so you don't have to.</p>
     </div>
 
     <!-- SECOND CTA -->
     <a href="#" class="cta-btn">
-        <span class="lock">🔒</span> CLAIM MY BOTTLES + FREE BONUSES BEFORE THEY'RE GONE
-        <span class="sub">Only <span id="bottles-left-2">137</span> bottles left at this price • Secure 256-bit encrypted checkout</span>
+        CLAIM MY BOTTLES + FREE BONUSES BEFORE THEY'RE GONE
+        <span class="sub">Only <span id="bottles-left-2">150</span> bottles left at this price | Secure 256-bit encrypted checkout</span>
     </a>
 
     <!-- BOTTOM DISCLAIMER -->
-    <p style="font-size: 12px; color: #999; margin-top: 30px; font-family: Arial, sans-serif; line-height: 1.6;">This article is published by the American Cardiovascular Research Institute as a public health service. Dr. Hartwell is an independent medical advisor and receives no compensation for product recommendations. Individual results may vary. Healthy Blood™ is a dietary supplement and is not intended to diagnose, treat, cure, or prevent any disease. Consult your physician before making any changes to your medication regimen.</p>
+    <p style="font-size: 12px; color: #999; margin-top: 30px; font-family: Arial, sans-serif; line-height: 1.6;">This article is published by the American Cardiovascular Research Institute as a public health service. Dr. Hartwell is an independent medical advisor and receives no compensation for product recommendations. Individual results may vary. Healthy Blood&#8482; is a dietary supplement and is not intended to diagnose, treat, cure, or prevent any disease. Consult your physician before making any changes to your medication regimen.</p>
 
 </div>
 
@@ -470,14 +530,24 @@
 
 <!-- STICKY BOTTOM BAR -->
 <div class="sticky-bar">
-    <div class="stock">⚠️ Only <span id="bottles-left-3">137</span> left</div>
+    <div class="stock">Only <span id="bottles-left-3">150</span> left</div>
     <div class="timer" id="sticky-timer">00:00:00</div>
-    <a href="#" class="cta-small">🔒 RUSH MY ORDER →</a>
+    <a href="#" class="cta-small">RUSH MY ORDER</a>
 </div>
 
 <script>
 (function() {
-    // ===== VIEWER COUNT (counts up, stops, persists) =====
+    // ===== PRODUCT GALLERY =====
+    window.setGallery = function(thumbEl, src) {
+        document.getElementById('galleryMain').src = src;
+        var thumbs = document.querySelectorAll('.product-thumbs .thumb');
+        for (var i = 0; i < thumbs.length; i++) {
+            thumbs[i].className = 'thumb';
+        }
+        thumbEl.className = 'thumb active';
+    };
+
+    // ===== VIEWER COUNT =====
     var VIEWER_KEY = 'hb_viewers';
     var VIEWER_TIME_KEY = 'hb_viewer_time';
     var stored = localStorage.getItem(VIEWER_KEY);
@@ -485,7 +555,6 @@
     var now = Date.now();
     var finalCount, currentCount;
 
-    // Generate a final count between 847 and 1,247
     if (stored && storedTime && (now - parseInt(storedTime)) < 3600000) {
         finalCount = parseInt(stored);
         currentCount = finalCount;
@@ -496,7 +565,6 @@
         localStorage.setItem(VIEWER_KEY, finalCount);
         localStorage.setItem(VIEWER_TIME_KEY, now);
 
-        // Count up from 0 to final over ~4 seconds
         var step = Math.ceil(finalCount / 80);
         var viewerInterval = setInterval(function() {
             currentCount += step + Math.floor(Math.random() * 5);
@@ -508,12 +576,11 @@
         }, 50);
     }
 
-    // ===== COUNTDOWN TIMER (persists on refresh) =====
+    // ===== COUNTDOWN TIMER =====
     var CD_KEY = 'hb_countdown_end';
     var cdEnd = localStorage.getItem(CD_KEY);
 
     if (!cdEnd || parseInt(cdEnd) < now) {
-        // Set timer for random 15-45 minutes from now
         var mins = Math.floor(Math.random() * 30) + 15;
         cdEnd = now + (mins * 60 * 1000);
         localStorage.setItem(CD_KEY, cdEnd);
@@ -524,17 +591,14 @@
     function updateCountdown() {
         var remaining = cdEnd - Date.now();
         if (remaining <= 0) {
-            // Reset with new time
             var mins = Math.floor(Math.random() * 30) + 15;
             cdEnd = Date.now() + (mins * 60 * 1000);
             localStorage.setItem(CD_KEY, cdEnd);
             remaining = cdEnd - Date.now();
         }
-
         var h = Math.floor(remaining / 3600000);
         var m = Math.floor((remaining % 3600000) / 60000);
         var s = Math.floor((remaining % 60000) / 1000);
-
         var timeStr = String(h).padStart(2, '0') + ':' + String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0');
         document.getElementById('cd-hours').textContent = String(h).padStart(2, '0');
         document.getElementById('cd-minutes').textContent = String(m).padStart(2, '0');
@@ -545,49 +609,78 @@
     updateCountdown();
     setInterval(updateCountdown, 1000);
 
-    // ===== INVENTORY COUNTER (slowly depletes, persists) =====
-    var INV_KEY = 'hb_inventory';
-    var INV_TIME_KEY = 'hb_inv_time';
-    var bottles = localStorage.getItem(INV_KEY);
-    var invTime = localStorage.getItem(INV_TIME_KEY);
+    // ===== BOTTLE COUNT + INVENTORY BAR (tick 1 by 1, variable speed, persistent) =====
+    var INV_START_KEY = 'hb_inv_start3';
+    var INV_SCHED_KEY = 'hb_inv_sched';
+    var START_BOTTLES = 150;
+    var END_BOTTLES = 90;
+    var TOTAL_DROP = START_BOTTLES - END_BOTTLES; // 60 bottles
+    var TOTAL_DURATION = 240; // 4 minutes in seconds
+    var START_PCT = 72;
+    var END_PCT = 88;
 
-    if (bottles && invTime) {
-        // Reduce by 1-3 per minute since last visit
-        var elapsed = (now - parseInt(invTime)) / 60000;
-        bottles = parseInt(bottles) - Math.floor(elapsed * (Math.random() * 2 + 1));
-        if (bottles < 23) bottles = Math.floor(Math.random() * 30) + 23;
+    var invStartTime = localStorage.getItem(INV_START_KEY);
+    var schedule = localStorage.getItem(INV_SCHED_KEY);
+
+    if (!invStartTime || !schedule) {
+        invStartTime = Date.now();
+        // Build a randomized schedule: each entry = ms after start when a bottle drops
+        var intervals = [];
+        var sum = 0;
+        for (var i = 0; i < TOTAL_DROP; i++) {
+            var r = 1 + Math.random() * 7; // 1-8 sec raw interval
+            intervals.push(r);
+            sum += r;
+        }
+        // Normalize so they add up to TOTAL_DURATION
+        var scale = TOTAL_DURATION / sum;
+        var cumulative = [];
+        var running = 0;
+        for (var i = 0; i < TOTAL_DROP; i++) {
+            running += intervals[i] * scale;
+            cumulative.push(Math.round(running * 1000)); // store as ms
+        }
+        schedule = cumulative;
+        localStorage.setItem(INV_START_KEY, invStartTime);
+        localStorage.setItem(INV_SCHED_KEY, JSON.stringify(schedule));
     } else {
-        bottles = Math.floor(Math.random() * 50) + 110;
+        invStartTime = parseInt(invStartTime);
+        schedule = JSON.parse(schedule);
     }
 
-    localStorage.setItem(INV_KEY, bottles);
-    localStorage.setItem(INV_TIME_KEY, now);
-
-    document.getElementById('bottles-left').textContent = bottles;
-    document.getElementById('bottles-left-2').textContent = bottles;
-    document.getElementById('bottles-left-3').textContent = bottles;
-
-    var pct = Math.min(97, Math.max(78, Math.round(((160 - bottles) / 160) * 100)));
-    document.getElementById('inventory-pct').textContent = pct;
-    document.getElementById('inventory-bar').style.width = pct + '%';
-
-    // Slowly deplete while on page
-    setInterval(function() {
-        if (Math.random() > 0.7) {
-            bottles--;
-            if (bottles < 23) bottles = 23;
-            localStorage.setItem(INV_KEY, bottles);
-            localStorage.setItem(INV_TIME_KEY, Date.now());
-            document.getElementById('bottles-left').textContent = bottles;
-            document.getElementById('bottles-left-2').textContent = bottles;
-            document.getElementById('bottles-left-3').textContent = bottles;
-            pct = Math.min(97, Math.max(78, Math.round(((160 - bottles) / 160) * 100)));
-            document.getElementById('inventory-pct').textContent = pct;
-            document.getElementById('inventory-bar').style.width = pct + '%';
+    function getBottlesNow() {
+        var elapsed = Date.now() - invStartTime;
+        var dropped = 0;
+        for (var i = 0; i < schedule.length; i++) {
+            if (elapsed >= schedule[i]) dropped++;
+            else break;
         }
-    }, 30000);
+        return START_BOTTLES - dropped;
+    }
 
-    // ===== READ COUNT (slowly increases) =====
+    function renderInventory(bottles) {
+        var progress = (START_BOTTLES - bottles) / TOTAL_DROP;
+        var pct = Math.round(START_PCT + (END_PCT - START_PCT) * progress);
+        document.getElementById('bottles-left').textContent = bottles;
+        document.getElementById('bottles-left-2').textContent = bottles;
+        document.getElementById('bottles-left-3').textContent = bottles;
+        document.getElementById('inventory-pct').textContent = pct;
+        document.getElementById('inventory-bar').style.width = pct + '%';
+    }
+
+    var lastBottles = -1;
+    function tickInventory() {
+        var bottles = getBottlesNow();
+        if (bottles !== lastBottles) {
+            lastBottles = bottles;
+            renderInventory(bottles);
+        }
+    }
+
+    tickInventory();
+    setInterval(tickInventory, 500);
+
+    // ===== READ COUNT =====
     var READ_KEY = 'hb_reads';
     var reads = localStorage.getItem(READ_KEY);
     if (reads) {
