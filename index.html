@@ -77,10 +77,12 @@
 
         /* PRODUCT GALLERY */
         .product-gallery { margin: 25px 0; }
-        .product-gallery-main { width: 100%; max-width: 420px; margin: 0 auto 12px; border-radius: 8px; overflow: hidden; background: #fff; border: 2px solid #c8a84e; box-shadow: 0 0 0 1px #c8a84e, 0 4px 15px rgba(200,168,78,0.2); }
+        .gallery-slider-wrap { display: flex; gap: 12px; align-items: flex-start; }
+        .product-gallery-main { flex: 1; min-width: 0; border-radius: 8px; overflow: hidden; background: #fff; border: 2px solid #c8a84e; box-shadow: 0 0 0 1px #c8a84e, 0 4px 15px rgba(200,168,78,0.2); }
         .product-gallery-main img { width: 100%; display: block; }
-        .product-thumbs { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
-        .product-thumbs .thumb { width: 72px; height: 72px; border-radius: 6px; overflow: hidden; cursor: pointer; border: 2px solid #eee; transition: border-color 0.2s; flex-shrink: 0; }
+        .product-thumbs { display: flex; flex-direction: column; gap: 6px; flex-shrink: 0; width: 62px; max-height: 420px; overflow-y: auto; scrollbar-width: none; }
+        .product-thumbs::-webkit-scrollbar { display: none; }
+        .product-thumbs .thumb { width: 62px; height: 62px; border-radius: 6px; overflow: hidden; cursor: pointer; border: 2px solid #eee; transition: border-color 0.2s; flex-shrink: 0; }
         .product-thumbs .thumb:hover { border-color: #c8a84e; }
         .product-thumbs .thumb.active { border-color: #c8a84e; box-shadow: 0 0 0 1px #c8a84e; }
         .product-thumbs .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
@@ -88,10 +90,10 @@
         /* VIDEO REVIEWS */
         .video-reviews-section { margin: 30px 0; }
         .video-reviews-section h3 { font-family: Arial, sans-serif; font-size: 16px; text-align: center; color: #0a1628; margin-bottom: 15px; letter-spacing: 1px; text-transform: uppercase; }
-        .video-reviews { display: flex; gap: 12px; overflow-x: auto; -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory; padding: 5px 0; scrollbar-width: none; }
+        .video-reviews { display: flex; gap: 10px; overflow-x: auto; -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory; padding: 5px 0; scrollbar-width: none; }
         .video-reviews::-webkit-scrollbar { display: none; }
-        .video-card { min-width: 220px; max-width: 220px; scroll-snap-align: start; flex-shrink: 0; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); background: #f8f8f5; }
-        .video-card video { width: 100%; height: 300px; object-fit: cover; display: block; background: #000; }
+        .video-card { flex: 1 1 0; min-width: 0; scroll-snap-align: start; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); background: #f8f8f5; }
+        .video-card video { width: 100%; aspect-ratio: 9/16; object-fit: cover; display: block; background: #000; }
         .video-card .vid-label { padding: 8px 12px; font-family: Arial, sans-serif; font-size: 12px; color: #666; text-align: center; }
         .video-card .vid-label .vid-stars { color: #c8a84e; font-size: 13px; display: block; margin-bottom: 2px; }
 
@@ -182,8 +184,13 @@
             .doctor-box { flex-direction: column; align-items: center; text-align: center; }
             .site-header-inner { flex-direction: column; text-align: center; gap: 10px; }
             .sticky-bar { flex-wrap: wrap; justify-content: center; gap: 8px; padding: 8px 10px; }
-            .video-card { min-width: 180px; max-width: 180px; }
-            .video-card video { height: 240px; }
+            .gallery-slider-wrap { flex-direction: row; }
+            .product-thumbs { flex-direction: row; width: auto; max-height: none; overflow-x: auto; overflow-y: visible; gap: 6px; order: 1; }
+            .product-gallery-main { order: 0; }
+            .gallery-slider-wrap { flex-direction: column-reverse; }
+            .product-thumbs .thumb { width: 52px; height: 52px; }
+            .video-card { flex: none; min-width: 45%; }
+            .video-card video { aspect-ratio: 9/16; }
         }
 
         body { padding-bottom: 70px; }
@@ -348,18 +355,21 @@
 
         <!-- PRODUCT GALLERY -->
         <div class="product-gallery">
-            <div class="product-gallery-main">
-                <img id="galleryMain" src="https://cdn.shopify.com/s/files/1/0789/7792/5341/files/HealthyBlood_Luxury_Box_Bottle_1080.webp?v=1780556018" alt="Healthy Blood">
-            </div>
-            <div class="product-thumbs">
-                <div class="thumb active" onclick="setGallery(this, 'https://cdn.shopify.com/s/files/1/0789/7792/5341/files/HealthyBlood_Luxury_Box_Bottle_1080.webp?v=1780556018')"><img src="https://cdn.shopify.com/s/files/1/0789/7792/5341/files/HealthyBlood_Luxury_Box_Bottle_1080.webp?v=1780556018" alt="Box"></div>
-                <div class="thumb" onclick="setGallery(this, 'https://cdn.shopify.com/s/files/1/0789/7792/5341/files/hf_20260528_091643_0752e344-ac1c-446f-9c9a-cd7aef88e38f.webp?v=1780556017')"><img src="https://cdn.shopify.com/s/files/1/0789/7792/5341/files/hf_20260528_091643_0752e344-ac1c-446f-9c9a-cd7aef88e38f.webp?v=1780556017" alt="Product"></div>
-                <div class="thumb" onclick="setGallery(this, 'https://cdn.shopify.com/s/files/1/0789/7792/5341/files/HealthyBlood_Why_Choose_Infographic_1080.webp?v=1780556018')"><img src="https://cdn.shopify.com/s/files/1/0789/7792/5341/files/HealthyBlood_Why_Choose_Infographic_1080.webp?v=1780556018" alt="Why Choose"></div>
-                <div class="thumb" onclick="setGallery(this, 'https://cdn.shopify.com/s/files/1/0789/7792/5341/files/HealthyBlood_How_To_Use_1080.webp?v=1780556017')"><img src="https://cdn.shopify.com/s/files/1/0789/7792/5341/files/HealthyBlood_How_To_Use_1080.webp?v=1780556017" alt="How To Use"></div>
-                <div class="thumb" onclick="setGallery(this, 'https://cdn.shopify.com/s/files/1/0789/7792/5341/files/HealthyBlood_Why_Liquid_Wins_1080.webp?v=1780556017')"><img src="https://cdn.shopify.com/s/files/1/0789/7792/5341/files/HealthyBlood_Why_Liquid_Wins_1080.webp?v=1780556017" alt="Why Liquid"></div>
-                <div class="thumb" onclick="setGallery(this, 'https://cdn.shopify.com/s/files/1/0789/7792/5341/files/HealthyBlood_Ingredient_Showcase_1080.webp?v=1780556018')"><img src="https://cdn.shopify.com/s/files/1/0789/7792/5341/files/HealthyBlood_Ingredient_Showcase_1080.webp?v=1780556018" alt="Ingredients"></div>
-                <div class="thumb" onclick="setGallery(this, 'https://cdn.shopify.com/s/files/1/0789/7792/5341/files/HealthyBlood_Satisfaction_Guarantee_1080.webp?v=1780556018')"><img src="https://cdn.shopify.com/s/files/1/0789/7792/5341/files/HealthyBlood_Satisfaction_Guarantee_1080.webp?v=1780556018" alt="Guarantee"></div>
-                <div class="thumb" onclick="setGallery(this, 'https://cdn.shopify.com/s/files/1/0789/7792/5341/files/hf_20260528_091101_7f0daf89-03f9-443e-a1cf-93e7ef069598.webp?v=1780556018')"><img src="https://cdn.shopify.com/s/files/1/0789/7792/5341/files/hf_20260528_091101_7f0daf89-03f9-443e-a1cf-93e7ef069598.webp?v=1780556018" alt="Product"></div>
+            <div class="gallery-slider-wrap">
+                <div class="product-gallery-main">
+                    <img id="galleryMain" src="https://cdn.shopify.com/s/files/1/0789/7792/5341/files/Screenshot_2026-06-05_at_8.27.02_PM.png?v=1780655229" alt="Healthy Blood">
+                </div>
+                <div class="product-thumbs">
+                    <div class="thumb active" onclick="setGallery(this, 'https://cdn.shopify.com/s/files/1/0789/7792/5341/files/Screenshot_2026-06-05_at_8.27.02_PM.png?v=1780655229')"><img src="https://cdn.shopify.com/s/files/1/0789/7792/5341/files/Screenshot_2026-06-05_at_8.27.02_PM.png?v=1780655229" alt="Product"></div>
+                    <div class="thumb" onclick="setGallery(this, 'https://cdn.shopify.com/s/files/1/0789/7792/5341/files/HealthyBlood_Luxury_Box_Bottle_1080.webp?v=1780556018')"><img src="https://cdn.shopify.com/s/files/1/0789/7792/5341/files/HealthyBlood_Luxury_Box_Bottle_1080.webp?v=1780556018" alt="Box"></div>
+                    <div class="thumb" onclick="setGallery(this, 'https://cdn.shopify.com/s/files/1/0789/7792/5341/files/hf_20260528_091643_0752e344-ac1c-446f-9c9a-cd7aef88e38f.webp?v=1780556017')"><img src="https://cdn.shopify.com/s/files/1/0789/7792/5341/files/hf_20260528_091643_0752e344-ac1c-446f-9c9a-cd7aef88e38f.webp?v=1780556017" alt="Product"></div>
+                    <div class="thumb" onclick="setGallery(this, 'https://cdn.shopify.com/s/files/1/0789/7792/5341/files/HealthyBlood_Why_Choose_Infographic_1080.webp?v=1780556018')"><img src="https://cdn.shopify.com/s/files/1/0789/7792/5341/files/HealthyBlood_Why_Choose_Infographic_1080.webp?v=1780556018" alt="Why Choose"></div>
+                    <div class="thumb" onclick="setGallery(this, 'https://cdn.shopify.com/s/files/1/0789/7792/5341/files/HealthyBlood_How_To_Use_1080.webp?v=1780556017')"><img src="https://cdn.shopify.com/s/files/1/0789/7792/5341/files/HealthyBlood_How_To_Use_1080.webp?v=1780556017" alt="How To Use"></div>
+                    <div class="thumb" onclick="setGallery(this, 'https://cdn.shopify.com/s/files/1/0789/7792/5341/files/HealthyBlood_Why_Liquid_Wins_1080.webp?v=1780556017')"><img src="https://cdn.shopify.com/s/files/1/0789/7792/5341/files/HealthyBlood_Why_Liquid_Wins_1080.webp?v=1780556017" alt="Why Liquid"></div>
+                    <div class="thumb" onclick="setGallery(this, 'https://cdn.shopify.com/s/files/1/0789/7792/5341/files/HealthyBlood_Ingredient_Showcase_1080.webp?v=1780556018')"><img src="https://cdn.shopify.com/s/files/1/0789/7792/5341/files/HealthyBlood_Ingredient_Showcase_1080.webp?v=1780556018" alt="Ingredients"></div>
+                    <div class="thumb" onclick="setGallery(this, 'https://cdn.shopify.com/s/files/1/0789/7792/5341/files/HealthyBlood_Satisfaction_Guarantee_1080.webp?v=1780556018')"><img src="https://cdn.shopify.com/s/files/1/0789/7792/5341/files/HealthyBlood_Satisfaction_Guarantee_1080.webp?v=1780556018" alt="Guarantee"></div>
+                    <div class="thumb" onclick="setGallery(this, 'https://cdn.shopify.com/s/files/1/0789/7792/5341/files/hf_20260528_091101_7f0daf89-03f9-443e-a1cf-93e7ef069598.webp?v=1780556018')"><img src="https://cdn.shopify.com/s/files/1/0789/7792/5341/files/hf_20260528_091101_7f0daf89-03f9-443e-a1cf-93e7ef069598.webp?v=1780556018" alt="Product"></div>
+                </div>
             </div>
         </div>
 
@@ -445,41 +455,20 @@
     <!-- CTA -->
     <a href="https://www.tryhealthyblood.com/" class="cta-btn">
         YES, RUSH MY ORDER NOW
-        <span class="sub">90-day money-back guarantee | Secure checkout</span>
+        <span class="sub">30-day money-back guarantee | Secure checkout</span>
     </a>
-
-    <!-- BONUS BOX -->
-    <div class="bonus-box">
-        <h3>ORDER TODAY AND GET $197 IN FREE BONUSES:</h3>
-        <div class="bonus-item">
-            <div class="icon">1.</div>
-            <div><strong>"The Statin Exit Protocol"</strong> How to safely discontinue statin medication in 14 days under physician supervision. Step-by-step guide used by 23,000+ patients. <span class="val">$79 value</span> <span class="free">FREE</span></div>
-        </div>
-        <div class="bonus-item">
-            <div class="icon">2.</div>
-            <div><strong>"The 7-Second Morning Ritual"</strong> The exact daily protocol from the Catanzaro clinical trials. Maximizes bergamot absorption by 340%. <span class="val">$49 value</span> <span class="free">FREE</span></div>
-        </div>
-        <div class="bonus-item">
-            <div class="icon">3.</div>
-            <div><strong>"47 Foods That DESTROY Cholesterol"</strong> The complete food guide that accelerates LDL reduction 3x faster when combined with Healthy Blood&#8482;. <span class="val">$39 value</span> <span class="free">FREE</span></div>
-        </div>
-        <div class="bonus-item">
-            <div class="icon">4.</div>
-            <div><strong>Priority VIP Hotline Access</strong> Direct phone line to our cardiovascular health team. Skip the queue. Get answers in minutes, not days. <span class="val">$30/mo value</span> <span class="free">FREE FOR LIFE</span></div>
-        </div>
-    </div>
 
     <!-- GUARANTEE -->
     <div class="guarantee">
         <div class="shield">GUARANTEE</div>
-        <h3>IRONCLAD 90-DAY MONEY-BACK GUARANTEE</h3>
-        <p>Try Healthy Blood&#8482; for a full 90 days. Get your bloodwork done. If your LDL doesn't drop significantly, or if you're unhappy for ANY reason, contact us and we'll refund every single cent. No questions. No hassle. No fine print. <strong>You don't even have to send the bottles back.</strong> We take ALL the risk so you don't have to.</p>
+        <h3>IRONCLAD 30-DAY MONEY-BACK GUARANTEE</h3>
+        <p>Try Healthy Blood&#8482; for a full 30 days. Get your bloodwork done. If your LDL doesn't drop significantly, or if you're unhappy for ANY reason, contact us and we'll refund every single cent. No questions. No hassle. No fine print. <strong>You don't even have to send the bottles back.</strong> We take ALL the risk so you don't have to.</p>
     </div>
 
     <!-- SECOND CTA -->
     <a href="https://www.tryhealthyblood.com/" class="cta-btn">
         CLAIM MY BOTTLES + FREE BONUSES BEFORE THEY'RE GONE
-        <span class="sub">Secure 256-bit encrypted checkout | 90-day money-back guarantee</span>
+        <span class="sub">Secure 256-bit encrypted checkout | 30-day money-back guarantee</span>
     </a>
 
     <!-- BOTTOM DISCLAIMER -->
